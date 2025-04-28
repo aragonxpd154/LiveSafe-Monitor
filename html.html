@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Detecção de Vídeo Congelado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    video {
+      border: 3px solid #333;
+      margin-top: 20px;
+      width: 640px;
+      height: 480px;
+    }
+    #status {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Monitor de Vídeo</h1>
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+  <div id="status">✅ Status: OK</div>
+
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const statusText = document.getElementById('status');
+
+    let lastFrameHash = '';
+    let lastUpdate = Date.now();
+    let alarmSent = false;
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        console.error("Erro ao acessar câmera:", err);
+        statusText.textContent = "Erro ao acessar câmera";
+        statusText.style.color = "red";
+      });
+
+    function hashFrame(imageData) {
+      let hash = 0;
+      for (let i = 0; i < imageData.data.length; i += 1000) {
+        hash += imageData.data[i];
+      }
+      return hash;
+    }
+
+    function enviarSNMP(value) {
+      fetch('http://localhost:3000/trap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ value: value })
+      })
+      .then(res => res.text())
+      .then(data => console.log("SNMP enviado:", data))
+      .catch(err => console.error("Erro ao enviar SNMP:", err));
+    }
+
+    function checkFreeze() {
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const currentHash = hashFrame(frame);
+      const now = Date.now();
+
+      if (currentHash !== lastFrameHash) {
+        lastFrameHash = currentHash;
+        lastUpdate = now;
+        statusText.textContent = "✅ Status: OK";
+        statusText.style.color = "green";
+        alarmSent = false; // reseta o alarme
+      } else if (now - lastUpdate >= 1000) {
+        if (!alarmSent) {
+          statusText.textContent = "⚠️ Vídeo congelado!";
+          statusText.style.color = "red";
+          enviarSNMP(2); // valor 2 = vídeo travado
+          alarmSent = true;
+        }
+      }
+    }
+
+    setInterval(checkFreeze, 200); // verifica 5x por segundo
+  </script>
+</body>
+</html>

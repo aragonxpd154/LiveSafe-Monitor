@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor de Vídeo e Áudio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+    video {
+      border: 3px solid #333;
+      margin-top: 20px;
+      width: 640px;
+      height: 480px;
+    }
+    #status {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Monitor de Vídeo e Áudio</h1>
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+  <div id="status">⏳ Aguardando inicialização...</div>
+
+  <script>
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const statusText = document.getElementById('status');
+
+    let lastFrameHash = '';
+    let lastUpdate = Date.now();
+
+    let alarmVideoFreeze = false;
+    let alarmAudioMute = false;
+    let alarmBlackScreen = false;
+
+    let monitorando = false;  // <- Monitoramento inicia como "false"
+
+    let audioContext, analyser, microphone, audioDataArray;
+
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      .then(stream => {
+        video.srcObject = stream;
+
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        microphone = audioContext.createMediaStreamSource(stream);
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        audioDataArray = new Uint8Array(analyser.frequencyBinCount);
+        microphone.connect(analyser);
+
+        // Espera 10 segundos para começar o monitoramento
+        setTimeout(() => {
+          monitorando = true;
+          lastUpdate = Date.now(); // Atualiza tempo base
+          statusText.innerText = "✅ Status: OK";
+          statusText.style.color = "green";
+          console.log("🔵 Monitoramento iniciado após 10 segundos");
+        }, 10000);
+
+      })
+      .catch(err => {
+        console.error("Erro ao acessar câmera/microfone:", err);
+        statusText.textContent = "Erro ao acessar câmera/microfone";
+        statusText.style.color = "red";
+      });
+
+    function hashFrame(imageData) {
+      let hash = 0;
+      for (let i = 0; i < imageData.data.length; i += 1000) {
+        hash += imageData.data[i];
+      }
+      return hash;
+    }
+
+    function enviarSNMP(value) {
+      fetch('http://localhost:3000/trap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ value: value })
+      })
+      .then(res => res.text())
+      .then(data => console.log("SNMP enviado:", data))
+      .catch(err => console.error("Erro ao enviar SNMP:", err));
+    }
+
+    function atualizarStatus() {
+      let mensagens = [];
+
+      if (alarmVideoFreeze) mensagens.push("⚠️ Vídeo congelado");
+      if (alarmAudioMute) mensagens.push("⚠️ Áudio mudo");
+      if (alarmBlackScreen) mensagens.push("⚠️ Tela preta");
+
+      if (mensagens.length === 0) {
+        statusText.innerText = "✅ Status: OK";
+        statusText.style.color = "green";
+      } else {
+        statusText.innerText = mensagens.join('   ');
+        statusText.style.color = "red";
+      }
+    }
+
+    function checkFreeze() {
+      if (!monitorando) return; // Só monitora após 10s
+
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const currentHash = hashFrame(frame);
+      const now = Date.now();
+
+      if (currentHash !== lastFrameHash) {
+        if (alarmVideoFreeze) {
+          alarmVideoFreeze = false;
+          enviarSNMP(12); // Trap vídeo normalizado
+        }
+        lastFrameHash = currentHash;
+        lastUpdate = now;
+      } else if (now - lastUpdate >= 1000) {
+        if (!alarmVideoFreeze) {
+          alarmVideoFreeze = true;
+          enviarSNMP(2); // Trap vídeo congelado
+        }
+      }
+
+      // Detecção de tela preta
+      const gray = [];
+      for (let i = 0; i < frame.data.length; i += 4) {
+        gray.push((frame.data[i] + frame.data[i+1] + frame.data[i+2]) / 3);
+      }
+      const avgGray = gray.reduce((a, b) => a + b, 0) / gray.length;
+
+      if (avgGray < 5) {
+        if (!alarmBlackScreen) {
+          alarmBlackScreen = true;
+          enviarSNMP(4); // Trap tela preta
+        }
+      } else {
+        if (alarmBlackScreen) {
+          alarmBlackScreen = false;
+          enviarSNMP(14); // Trap tela normalizada
+        }
+      }
+    }
+
+    function checkAudio() {
+      if (!monitorando || !analyser) return;
+
+      analyser.getByteFrequencyData(audioDataArray);
+      const rms = Math.sqrt(audioDataArray.reduce((sum, v) => sum + v*v, 0) / audioDataArray.length);
+
+      if (rms < 5) {
+        if (!alarmAudioMute) {
+          alarmAudioMute = true;
+          enviarSNMP(3); // Trap áudio mudo
+        }
+      } else {
+        if (alarmAudioMute) {
+          alarmAudioMute = false;
+          enviarSNMP(13); // Trap áudio normalizado
+        }
+      }
+    }
+
+    setInterval(() => {
+      checkFreeze();
+      checkAudio();
+      atualizarStatus();
+    }, 500);
+  </script>
+</body>
+</html>

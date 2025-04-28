@@ -1,0 +1,430 @@
+<!--System developer by: Marcos Silva (aragones xpd154)
+                         Author: Marcos Silva etc..
+                         Author URL: http://aragones.esy.es
+                         License: Creative Commons Attribution 3.0 Unported
+                         License URL: http://creativecommons.org/licenses/by/3.0/
+                         -->
+                         <!DOCTYPE HTML>
+                         <head>
+                         <title>Painel de Administração</title>
+                         <meta name='viewport' content='width=device-width, initial-scale=1'>
+                         <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+                         <meta name='keywords' content='Painel de Controle de Luz' />
+                         <script type='application/x-javascript'> addEventListener('load', function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+                         <!-- bootstrap-css -->
+                         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' rel='stylesheet'></link>
+                         <link rel='stylesheet' href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/bootstrap.min.css'>
+                         <!-- //bootstrap-css -->
+                         <!-- Custom CSS -->
+                         <link href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/style.css' rel='stylesheet' type='text/css' />
+                         <link href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/style-responsive.css' rel='stylesheet'/>
+                         <!-- font CSS -->
+                         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+                         <!-- font-awesome icons -->
+                         <link rel='stylesheet' href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/font.css' type='text/css'/>
+                         <link href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/font-awesome.css' rel='stylesheet'>
+                         <link rel='stylesheet' href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/morris.css' type='text/css'/>
+                         <!-- calendar -->
+                         <link rel='stylesheet' href='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/css/monthly.css'>
+                         <!-- //calendar -->
+                         <!-- //font-awesome icons -->
+                         <script src='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/js/jquery2.0.3.min.js'></script>
+                         <script src='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/js/raphael-min.js'></script>
+                         <script src='https://cdn.rawgit.com/aragonxpd154/rid-pro/master/js/morris.js'></script>
+                         </head>
+                         <body>
+                         <section id='container'>
+                         <!--header start-->
+                         <header class='header fixed-top clearfix'>
+                         <!--logo start-->
+                         <div class='brand'>
+                         <a href='index.html' class='logo'>
+                         rid
+                         </a>
+                         <div class='sidebar-toggle-box'>
+                         <div class='fa fa-bars'></div>
+                         </div>
+                         </div>
+                         <!--logo end-->
+                         <div class='nav notify-row' id='top_menu'>
+                         <!--  notification start -->
+                         <ul class='nav top-menu'>
+                         <!-- settings start -->
+                         <li class='dropdown'>
+                         <a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+                         <i class='fa fa-tasks'></i>
+                         <span class='badge bg-success'>1</span>
+                         </a>
+                         <ul class='dropdown-menu extended tasks-bar'>
+                         <li>
+                         <p class=''>Controle</p>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         <a href='#'>
+                          </a>
+                         </li>
+                         <li class='external'>
+                         <a href='#'>Ver todos os controles</a>
+                         </li>
+                         </ul>
+                         </li>
+                         <!-- settings end -->
+                         <!-- inbox dropdown start-->
+                         <li id='header_inbox_bar' class='dropdown'>
+                         <a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+                         <i class='fa fa-envelope-o'></i>
+                         <span class='badge bg-important'>0</span>
+                         </a>
+                         <ul class='dropdown-menu extended inbox'>
+                         <li>
+                         <p class='red'>E-mail</p>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         </li>
+                         <li>
+                         <a href='#'>Ver todas as mensagens</a>
+                         </li>
+                         </ul>
+                         </li>
+                         <!-- inbox dropdown end -->
+                         <!-- notification dropdown start-->
+                         <li id='header_notification_bar' class='dropdown'>
+                         <a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+                         <i class='fa fa-bell-o'></i>
+                         <span class='badge bg-warning'>0</span>
+                         </a>
+                         <ul class='dropdown-menu extended notification'>
+                         <!-- <li>
+                         <p>Notificações</p>
+                         </li>
+                         <li>
+                         <div class='alert alert-info clearfix'>
+                         <span class='alert-icon'><i class='fa fa-bolt'></i></span>
+                         <div class='noti-info'>
+                         <a href='#'> .</a>
+                         </div>
+                         </div>
+                         </li>
+                         <li>
+                         <div class='alert alert-danger clearfix'>
+                         <span class='alert-icon'><i class='fa fa-bolt'></i></span>
+                         <div class='noti-info'>
+                         <a href='#'> </a>
+                         </div>
+                         </div>
+                         </li>
+                         <li>
+                         <div class='alert alert-success clearfix'>
+                         <span class='alert-icon'><i class='fa fa-bolt'></i></span>
+                         <div class='noti-info'>
+                         <a href='#'> </a>
+                         </div>
+                         </div>
+                         </li>
+                         </ul>
+                         </li> -->
+                         <!-- notification dropdown end -->
+                         </ul>
+                         <!--  notification end -->
+                         </div>
+                         <div class='top-nav clearfix'>
+                         <!--search & user info start-->
+                         <ul class='nav pull-right top-menu'>
+                         <li>
+                         <input type='text' class='form-control search' placeholder=' Pesquisar'>
+                         </li>
+                         <!-- user login dropdown start-->
+                         <li class='dropdown'>
+                         <a data-toggle='dropdown' class='dropdown-toggle' href='#'>
+                         <img alt='' src='https://i.imgur.com/izukq95.png'>
+                         <span class='username'>Administrador</span>
+                         <b class='caret'></b>
+                         </a>
+                         <ul class='dropdown-menu extended logout'>
+                         <li><a href='#'><i class=' fa fa-suitcase'></i>Perfil</a></li>
+                         <li><a href='#'><i class='fa fa-cog'></i> Configurações</a></li>
+                         <li><a href='login.html'><i class='fa fa-key'></i> Sair</a></li>
+                         </ul>
+                         </li>
+                         <!-- user login dropdown end -->
+
+                         </ul>
+                         <!--search & user info end-->
+                         </div>
+                         </header>
+                         <!--header end-->
+                         <!--sidebar start-->
+                         <aside>
+                          <div id="sidebar" class="nav-collapse">
+                            <!-- sidebar menu start-->
+                            <div class="leftside-navigation">
+                              <ul class="sidebar-menu" id="nav-accordion">
+                                <li>
+                                  <a class="active" href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa fa-dashboard"></i>
+                                    <span>Painel de Controle</span>
+                                  </a>
+                                </li>
+                        
+                                <li class="sub-menu">
+                                  <a href="javascript:;" style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa fa-th"></i>
+                                    <span>Tabelas de Configurações</span>
+                                  </a>
+                                </li>
+                        
+                                <li class="sub-menu">
+                                  <a href="javascript:;" style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                    <span>Gráficos</span>
+                                  </a>
+                                </li>
+                        
+                                <li>
+                                  <a href="login.html" style="display: flex; align-items: center; gap: 10px;">
+                                    <i class="fa fa-user"></i>
+                                    <span>Sair</span>
+                                  </a>
+                                </li>
+                              </ul>            
+                            </div>
+                            <!-- sidebar menu end-->
+                          </div>
+                        </aside>
+                        
+                         <!--sidebar end-->
+                         <!--main content start-->
+                         <section id='main-content'>
+                         <section class='wrapper'>
+                      
+                         </div>
+                         <div class='col-md-3 market-update-gd'>
+                      
+                         </div>
+                         <div class='col-md-3 market-update-gd'>
+                    
+                         </div>
+                    
+                         <div class='clearfix'> </div>
+                         </div>  
+                         <!-- //market-->
+                         <div class='row'>
+                         <div class='panel-body'>
+                         <div class='col-md-12 w3ls-graph'>
+                         <!--agileinfo-grap-->
+                         <div class='agileinfo-grap'>
+                         <div class='agileits-box'>
+                         <header class='agileits-box-header clearfix'>
+                         <h3>Monitoração </h3>
+                         <div class='toolbar'>
+                          <!DOCTYPE html>
+                          <html lang="pt-BR">
+                          <head>
+                            <meta charset="UTF-8">
+                            <title>Monitor de Vídeo e Áudio</title>
+                            <style>
+                              body {
+                                font-family: Arial, sans-serif;
+                                text-align: center;
+                                background-color: #f5f5f5;
+                              }
+                              video {
+                                border: 3px solid #333;
+                                margin-top: 20px;
+                                width: 640px;
+                                height: 480px;
+                              }
+                              #status {
+                                font-size: 1.5em;
+                                margin-top: 20px;
+                                font-weight: bold;
+                              }
+                            </style>
+                          </head>
+                          <body>
+                            
+                            <video id="video" autoplay playsinline></video>
+                            <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+                            <div id="status">⏳ Aguardando inicialização...</div>
+                          
+                            <script>
+                              const video = document.getElementById('video');
+                              const canvas = document.getElementById('canvas');
+                              const ctx = canvas.getContext('2d');
+                              const statusText = document.getElementById('status');
+                          
+                              let lastFrameHash = '';
+                              let lastUpdate = Date.now();
+                          
+                              let alarmVideoFreeze = false;
+                              let alarmAudioMute = false;
+                              let alarmBlackScreen = false;
+                          
+                              let monitorando = false;  // <- Monitoramento inicia como "false"
+                          
+                              let audioContext, analyser, microphone, audioDataArray;
+                          
+                              navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+                                .then(stream => {
+                                  video.srcObject = stream;
+                          
+                                  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                                  microphone = audioContext.createMediaStreamSource(stream);
+                                  analyser = audioContext.createAnalyser();
+                                  analyser.fftSize = 256;
+                                  audioDataArray = new Uint8Array(analyser.frequencyBinCount);
+                                  microphone.connect(analyser);
+                          
+                                  // Espera 10 segundos para começar o monitoramento
+                                  setTimeout(() => {
+                                    monitorando = true;
+                                    lastUpdate = Date.now(); // Atualiza tempo base
+                                    statusText.innerText = "✅ Status: OK";
+                                    statusText.style.color = "green";
+                                    console.log("🔵 Monitoramento iniciado após 10 segundos");
+                                  }, 10000);
+                          
+                                })
+                                .catch(err => {
+                                  console.error("Erro ao acessar câmera/microfone:", err);
+                                  statusText.textContent = "Erro ao acessar câmera/microfone";
+                                  statusText.style.color = "red";
+                                });
+                          
+                              function hashFrame(imageData) {
+                                let hash = 0;
+                                for (let i = 0; i < imageData.data.length; i += 1000) {
+                                  hash += imageData.data[i];
+                                }
+                                return hash;
+                              }
+                          
+                              function enviarSNMP(value) {
+                                fetch('http://localhost:3000/trap', {
+                                  method: 'POST',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({ value: value })
+                                })
+                                .then(res => res.text())
+                                .then(data => console.log("SNMP enviado:", data))
+                                .catch(err => console.error("Erro ao enviar SNMP:", err));
+                              }
+                          
+                              function atualizarStatus() {
+                                let mensagens = [];
+                          
+                                if (alarmVideoFreeze) mensagens.push("⚠️ Vídeo congelado");
+                                if (alarmAudioMute) mensagens.push("⚠️ Áudio mudo");
+                                if (alarmBlackScreen) mensagens.push("⚠️ Tela preta");
+                          
+                                if (mensagens.length === 0) {
+                                  statusText.innerText = "✅ Status: OK";
+                                  statusText.style.color = "green";
+                                } else {
+                                  statusText.innerText = mensagens.join('   ');
+                                  statusText.style.color = "red";
+                                }
+                              }
+                          
+                              function checkFreeze() {
+                                if (!monitorando) return; // Só monitora após 10s
+                          
+                                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                                const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                                const currentHash = hashFrame(frame);
+                                const now = Date.now();
+                          
+                                if (currentHash !== lastFrameHash) {
+                                  if (alarmVideoFreeze) {
+                                    alarmVideoFreeze = false;
+                                    enviarSNMP(12); // Trap vídeo normalizado
+                                  }
+                                  lastFrameHash = currentHash;
+                                  lastUpdate = now;
+                                } else if (now - lastUpdate >= 1000) {
+                                  if (!alarmVideoFreeze) {
+                                    alarmVideoFreeze = true;
+                                    enviarSNMP(2); // Trap vídeo congelado
+                                  }
+                                }
+                          
+                                // Detecção de tela preta
+                                const gray = [];
+                                for (let i = 0; i < frame.data.length; i += 4) {
+                                  gray.push((frame.data[i] + frame.data[i+1] + frame.data[i+2]) / 3);
+                                }
+                                const avgGray = gray.reduce((a, b) => a + b, 0) / gray.length;
+                          
+                                if (avgGray < 5) {
+                                  if (!alarmBlackScreen) {
+                                    alarmBlackScreen = true;
+                                    enviarSNMP(4); // Trap tela preta
+                                  }
+                                } else {
+                                  if (alarmBlackScreen) {
+                                    alarmBlackScreen = false;
+                                    enviarSNMP(14); // Trap tela normalizada
+                                  }
+                                }
+                              }
+                          
+                              function checkAudio() {
+                                if (!monitorando || !analyser) return;
+                          
+                                analyser.getByteFrequencyData(audioDataArray);
+                                const rms = Math.sqrt(audioDataArray.reduce((sum, v) => sum + v*v, 0) / audioDataArray.length);
+                          
+                                if (rms < 5) {
+                                  if (!alarmAudioMute) {
+                                    alarmAudioMute = true;
+                                    enviarSNMP(3); // Trap áudio mudo
+                                  }
+                                } else {
+                                  if (alarmAudioMute) {
+                                    alarmAudioMute = false;
+                                    enviarSNMP(13); // Trap áudio normalizado
+                                  }
+                                }
+                              }
+                          
+                              setInterval(() => {
+                                checkFreeze();
+                                checkAudio();
+                                atualizarStatus();
+                              }, 500);
+                            </script>
+                          </body>
+                          </html>
+                          
+                                </div>
+
+                         </div>
+                         </header>
+                         <div class='agileits-box-body clearfix'>
+                         <div id='hero-area'></div>
+                         </div>
+                         </div>
+                         </div>
+                         <!--//agileinfo-grap-->
+
+                         </div>
+                         </div>
+                         </div>
+
+                         <!-- //market-->
+                         <div class='row'>
+                         <div class='panel-body'>
+                         <div class='col-md-12 w3ls-graph'>
+                         
