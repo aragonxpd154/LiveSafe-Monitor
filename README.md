@@ -1,6 +1,6 @@
 # LiveSafe Monitor
 
-![Screenshot]([https://raw.githubusercontent.com/aragonxpd154/video-monitor-analytics/main/assets/preview.png](https://raw.githubusercontent.com/aragonxpd154/LiveSafe-Monitor/refs/heads/main/image/print%201.png))
+![Screenshot](https://raw.githubusercontent.com/aragonxpd154/LiveSafe-Monitor/refs/heads/main/image/print%201.png)
 
 ## 📋 Description
 
