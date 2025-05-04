@@ -1,6 +1,6 @@
 # LiveSafe Monitor
 
-![Screenshot](https://raw.githubusercontent.com/aragonxpd154/video-monitor-analytics/main/assets/preview.png)
+![Screenshot]([https://raw.githubusercontent.com/aragonxpd154/video-monitor-analytics/main/assets/preview.png](https://raw.githubusercontent.com/aragonxpd154/LiveSafe-Monitor/refs/heads/main/image/print%201.png))
 
 ## 📋 Description
 
@@ -31,7 +31,7 @@ It is ideal for use in monitoring cameras, IoT systems, industrial networks, and
 
 | Monitoring Page | Server Running |
 | :---: | :---: |
-| ![Monitoring Page](https://raw.githubusercontent.com/aragonxpd154/video-monitor-analytics/main/assets/monitoring.png) | ![Server Running](https://raw.githubusercontent.com/aragonxpd154/video-monitor-analytics/main/assets/server.png) |
+| ![Monitoring Page](https://raw.githubusercontent.com/aragonxpd154/video-monitor-analytics/main/assets/monitoring.png) | ![Server Running](https://raw.githubusercontent.com/aragonxpd154/LiveSafe-Monitor/refs/heads/main/image/print%202.png) |
 
 ## 📦 Installation
 
