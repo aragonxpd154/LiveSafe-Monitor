@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const { execFileSync } = require('child_process');
+const { execFileSync, spawn } = require('child_process');
 const path = require('path');
 const config = require('./config');
 const { Channel } = require('./channel');
@@ -8,6 +8,8 @@ const { Site, ProxyCache } = require('./remote');
 const { Traps, Agent, STARTUP_CODE, TEST_CODE } = require('./snmp');
 const { EventStore } = require('./events');
 const { createServer } = require('./web');
+const { createSetup } = require('./setup');
+const { createInstaller } = require('./installer');
 const encoder = require('./encoder');
 const system = require('./system');
 const { logger, setLevel } = require('./log');
@@ -35,7 +37,9 @@ async function main() {
     process.exit(2);
   }
   if (cfg.logLevel) setLevel(cfg.logLevel);
-  const roles = [cfg.channels.length && `${cfg.channels.length} canal(is) local(is)`, cfg.sites.length && `${cfg.sites.length} Pi(s) remoto(s)`].filter(Boolean).join(' + ');
+  const roles =
+    [cfg.channels.length && `${cfg.channels.length} canal(is) local(is)`, cfg.sites.length && `${cfg.sites.length} Pi(s) remoto(s)`].filter(Boolean).join(' + ') ||
+    `aguardando configuração (${cfg.role === 'central' ? 'servidor central' : 'Pi de borda'}) — abra o painel em /setup`;
   log.info(`LiveSafe Monitor ${VERSION} — "${cfg.siteName}": ${roles}. Config ${cfg.file}`);
 
   // ---------- canais locais (Pi de borda) ----------
@@ -71,7 +75,7 @@ async function main() {
         groups.push({ key: 'local', name: cfg.siteName, base: '', kind: 'local', online: true, system: sys, channels: channels.map((c) => c.status(now)) });
       }
       for (const s of sites) groups.push(s.group(now));
-      const st = { version: VERSION, now, siteName: cfg.siteName, mode: sites.length ? 'central' : 'edge', system: sys, snmp: traps.status(), groups };
+      const st = { version: VERSION, now, siteName: cfg.siteName, mode: cfg.role, setupPending: cfg.setupPending, system: sys, snmp: traps.status(), groups };
       if (sites.length) st.cache = cache.stats();
       if (full) st.events = events.recent(100);
       return st;
@@ -99,6 +103,8 @@ async function main() {
     },
   };
 
+  app.setup = createSetup({ cfg, channels, version: VERSION, ffmpegPath, restart: (why) => shutdown(why, true) });
+  app.installer = createInstaller(VERSION);
   const web = createServer(app, cfg.http);
   events.on('event', (ev) => web.broadcast('event', ev));
 
@@ -151,10 +157,12 @@ async function main() {
   const live = setInterval(() => web.pushState(() => app.state(false)), 250);
 
   let closing = false;
-  async function shutdown(sig) {
+  // relaunch: sob o systemd basta sair (Restart=always sobe de novo com a
+  // configuração nova); fora dele, o processo se reinicia sozinho.
+  async function shutdown(sig, relaunch = false) {
     if (closing) return;
     closing = true;
-    log.info(`${sig} recebido, encerrando…`);
+    log.info(relaunch ? `${sig}: reiniciando…` : `${sig} recebido, encerrando…`);
     clearInterval(tick);
     clearInterval(live);
     for (const s of sites) s.stop();
@@ -162,6 +170,9 @@ async function main() {
     await web.close();
     traps.close();
     agent.close();
+    if (relaunch && !process.env.INVOCATION_ID) {
+      spawn(process.execPath, [...process.execArgv, ...process.argv.slice(1)], { stdio: "inherit", detached: true }).unref();
+    }
     process.exit(0);
   }
   process.on('SIGTERM', () => shutdown('SIGTERM'));

@@ -1,0 +1,64 @@
+name: Release
+
+# Ao criar uma tag v5.x.x, publica os dois pacotes que o instalador usa:
+#   livesafe-monitor.tar.gz       instalação online (o Pi baixa ffmpeg e Node pela internet)
+#   livesafe-offline-arm64.tar.gz instalação sem internet (Raspberry Pi OS Bookworm 64 bits)
+# Ficam em github.com/<repo>/releases/latest/download/<arquivo>.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pacote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+      - run: bash scripts/build-release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pacote
+          path: dist/livesafe-monitor.tar.gz
+
+  offline-arm64:
+    needs: pacote
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pacote
+          path: dist
+      - name: Montar pacote offline para Raspberry Pi OS Bookworm arm64
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends dpkg-dev debian-archive-keyring gnupg
+          bash scripts/build-offline-bundle.sh --pi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: offline-arm64
+          path: dist/livesafe-offline-arm64.tar.gz
+
+  publicar:
+    needs: [pacote, offline-arm64]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Publicar release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/livesafe-monitor.tar.gz dist/livesafe-offline-arm64.tar.gz \
+            --repo "$GITHUB_REPOSITORY" --title "LiveSafe Monitor $GITHUB_REF_NAME" --generate-notes

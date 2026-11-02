@@ -6,7 +6,7 @@
 # vezes seguidas (com 5 s entre elas), o serviço é reiniciado.
 set -u
 
-CONF="${LIVESAFE_CONFIG:-/etc/livesafe/config.json}"
+CONF="${LIVESAFE_CONFIG:-/var/lib/livesafe/config.json}"
 PORT=$(node -p "try{require('$CONF').http.port||8080}catch(e){8080}" 2>/dev/null || echo 8080)
 URL="http://127.0.0.1:${PORT}/healthz"
 TRIES=3

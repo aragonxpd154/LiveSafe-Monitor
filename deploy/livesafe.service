@@ -10,7 +10,7 @@ User=livesafe
 Group=livesafe
 SupplementaryGroups=video audio
 WorkingDirectory=/opt/livesafe
-ExecStart=/usr/bin/node --max-old-space-size=96 /opt/livesafe/src/index.js /etc/livesafe/config.json
+ExecStart=/usr/bin/env node --max-old-space-size=96 /opt/livesafe/src/index.js /var/lib/livesafe/config.json
 Environment=LOG_LEVEL=info
 
 # Se cair, volta sozinho. O ffmpeg de cada canal tem seu próprio religamento.
