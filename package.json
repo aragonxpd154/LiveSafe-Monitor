@@ -1,18 +1,26 @@
 {
-  "name": "snmp-monitor-obel",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+  "name": "livesafe-monitor",
+  "version": "5.0.0",
+  "description": "Monitor de sinal de vídeo e áudio (congelamento, tela preta, silêncio, perda de sinal) com alarmes SNMP — feito para rodar leve no Raspberry Pi",
+  "main": "src/index.js",
+  "bin": {
+    "livesafe": "src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "scripts": {
+    "start": "node --max-old-space-size=96 src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Marcos Santos <marcos.silvadeveloper@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aragonxpd154/LiveSafe-Monitor.git"
+  },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "net-snmp": "^3.20.0"
+    "hls.js": "1.6.19",
+    "net-snmp": "^3.29.2"
   }
 }

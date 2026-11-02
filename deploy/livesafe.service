@@ -1,0 +1,44 @@
+[Unit]
+Description=LiveSafe Monitor — monitoração de vídeo/áudio com alarmes SNMP
+Documentation=https://github.com/aragonxpd154/LiveSafe-Monitor
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=livesafe
+Group=livesafe
+SupplementaryGroups=video audio
+WorkingDirectory=/opt/livesafe
+ExecStart=/usr/bin/node --max-old-space-size=96 /opt/livesafe/src/index.js /etc/livesafe/config.json
+Environment=LOG_LEVEL=info
+
+# Se cair, volta sozinho. O ffmpeg de cada canal tem seu próprio religamento.
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+KillMode=control-group
+
+# Limites para nunca derrubar o Pi (valem para o Node + todos os ffmpeg).
+MemoryHigh=900M
+MemoryMax=1200M
+TasksMax=256
+
+# Permite usar as portas 161 (agente SNMP) ou 80 (painel) sem rodar como root.
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+# Histórico em /var/lib/livesafe; stream HLS em /run/livesafe (RAM — não gasta o SD).
+StateDirectory=livesafe
+RuntimeDirectory=livesafe
+RuntimeDirectoryMode=0750
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=LiveSafe — vigia que reinicia o serviço se ele travar
+After=livesafe.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/livesafe/deploy/watchdog.sh
+TimeoutStartSec=60

@@ -1,0 +1,34 @@
+{
+  "siteName": "Pedra Azul",
+  "http": { "host": "0.0.0.0", "port": 8080, "auth": { "user": "livesafe", "password": "troque-esta-senha" } },
+  "snmp": {
+    "traps": {
+      "enabled": true,
+      "targets": [{ "host": "192.168.1.2", "port": 162 }],
+      "community": "public",
+      "version": "1",
+      "sendStartup": true
+    },
+    "agent": { "enabled": false, "address": "0.0.0.0", "port": 1161, "community": "public" }
+  },
+  "events": { "file": "/var/lib/livesafe/events.jsonl", "maxBytes": 1048576, "memory": 500 },
+  "defaults": {
+    "freeze": { "enabled": true, "seconds": 10, "motionPct": 0.1, "pixelDelta": 12 },
+    "black": { "enabled": true, "seconds": 5, "pct": 98, "pixelLuma": 32 },
+    "silence": { "enabled": true, "seconds": 10, "dbfs": -60 },
+    "signal": { "stallSeconds": 8 },
+    "stream": { "enabled": true, "encoder": "auto", "width": 1280, "fps": 25, "bitrate": "2000k", "audioBitrate": "96k", "segmentSeconds": 1, "windowSeconds": 30 }
+  },
+  "channels": [
+    {
+      "id": "hdmi",
+      "name": "Receptor TV Gazeta (HDMI)",
+      "inputArgs": [
+        "-f", "v4l2", "-input_format", "mjpeg", "-video_size", "1280x720", "-framerate", "30", "-i", "/dev/video0",
+        "-f", "alsa", "-channels", "2", "-sample_rate", "48000", "-i", "hw:CARD=MS2109,DEV=0"
+      ],
+      "videoStream": "0:v:0",
+      "audioStream": "1:a:0"
+    }
+  ]
+}

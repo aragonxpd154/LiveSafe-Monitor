@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiveSafe</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><rect class="dot" x="16" y="8" width="3" height="3"/></svg>
+    <span class="brand-name">LiveSafe</span>
+    <span class="brand-site" id="site-name"></span>
+  </div>
+  <div class="summary" id="summary" role="status" aria-live="polite">Conectando…</div>
+  <ul class="host" id="host" aria-label="Saúde deste servidor"></ul>
+  <button class="sound" id="sound" type="button" aria-pressed="false" title="Tocar um bipe quando um alarme disparar">Som desligado</button>
+</header>
+
+<div class="offline" id="offline" hidden>Sem conexão com o servidor LiveSafe. Tentando reconectar…</div>
+
+<main class="layout">
+  <div class="wall" id="wall" aria-label="Locais e canais monitorados"></div>
+
+  <aside class="log" aria-labelledby="log-title">
+    <div class="log-head">
+      <h2 id="log-title">Ocorrências</h2>
+      <span class="log-count" id="log-count"></span>
+    </div>
+    <ol class="events" id="events"></ol>
+    <div class="snmp" id="snmp">
+      <p class="snmp-line" id="snmp-line"></p>
+      <button type="button" class="btn" id="test-trap">Enviar trap de teste</button>
+    </div>
+  </aside>
+</main>
+
+<template id="site-tpl">
+  <section class="site">
+    <header class="site-head">
+      <span class="site-dot" aria-hidden="true"></span>
+      <h2 class="site-name"></h2>
+      <span class="site-status"></span>
+      <ul class="site-host"></ul>
+    </header>
+    <div class="tiles"></div>
+  </section>
+</template>
+
+<template id="tile-tpl">
+  <article class="tile" data-overall="starting">
+    <div class="picture">
+      <img class="frame" alt="" decoding="async">
+      <div class="radio" hidden>
+        <div class="radio-bars">
+          <div class="hbar"><span class="hbar-fill"></span><span class="hbar-peak"></span></div>
+          <div class="hbar"><span class="hbar-fill"></span><span class="hbar-peak"></span></div>
+        </div>
+        <div class="radio-scale"><span>−60</span><span>−40</span><span>−20</span><span>−10</span><span>0 dBFS</span></div>
+      </div>
+      <div class="nopic">Aguardando imagem</div>
+      <div class="banner" hidden></div>
+      <button type="button" class="play-over" aria-label="Assistir ao vivo" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <div class="vu" aria-hidden="true">
+        <div class="vu-ch"><span class="vu-fill"></span><span class="vu-peak"></span></div>
+        <div class="vu-ch"><span class="vu-fill"></span><span class="vu-peak"></span></div>
+      </div>
+    </div>
+    <div class="umd">
+      <span class="tally" aria-hidden="true"></span>
+      <h3 class="name"></h3>
+      <span class="state-text"></span>
+    </div>
+    <div class="row">
+      <ul class="lamps">
+        <li data-k="signal">Sinal</li>
+        <li data-k="freeze">Congelamento</li>
+        <li data-k="black">Tela preta</li>
+        <li data-k="silence">Silêncio</li>
+      </ul>
+      <button type="button" class="btn watch">Assistir ao vivo</button>
+    </div>
+    <dl class="metrics">
+      <div data-m="motion"><dt>Movimento</dt><dd></dd></div>
+      <div data-m="luma"><dt>Luminância</dt><dd></dd></div>
+      <div data-m="audio"><dt>Áudio</dt><dd></dd></div>
+      <div data-m="fps"><dt>Análise</dt><dd></dd></div>
+    </dl>
+    <details class="more">
+      <summary>Detalhes da entrada</summary>
+      <dl class="facts"></dl>
+      <div class="actions">
+        <button type="button" class="btn restart">Reiniciar captura</button>
+        <a class="btn ghost diag" target="_blank" rel="noopener">Diagnóstico</a>
+      </div>
+    </details>
+  </article>
+</template>
+
+<dialog class="player" id="player" aria-labelledby="player-title">
+  <header class="player-head">
+    <div>
+      <p class="player-site" id="player-site"></p>
+      <h2 class="player-title" id="player-title"></h2>
+    </div>
+    <button type="button" class="icon-btn" id="player-close" aria-label="Fechar player">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </header>
+  <div class="stage" id="stage">
+    <video id="video" playsinline></video>
+    <div class="stage-audio" id="stage-audio" hidden>
+      <p>Somente áudio</p>
+      <div class="radio-bars">
+        <div class="hbar"><span class="hbar-fill"></span><span class="hbar-peak"></span></div>
+        <div class="hbar"><span class="hbar-fill"></span><span class="hbar-peak"></span></div>
+      </div>
+    </div>
+    <div class="stage-banner banner" id="stage-banner" hidden></div>
+    <div class="spinner" id="spinner" hidden aria-hidden="true"></div>
+    <p class="stage-msg" id="stage-msg" hidden></p>
+  </div>
+  <div class="timeline" id="timeline" role="slider" tabindex="0" aria-label="Posição no ao vivo" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">
+    <div class="track">
+      <div class="buffered" id="tl-buffered"></div>
+      <div class="played" id="tl-played"></div>
+      <div class="knob" id="tl-knob"></div>
+    </div>
+    <div class="hover-time" id="tl-hover" hidden></div>
+  </div>
+  <div class="controls">
+    <button type="button" class="icon-btn" id="btn-play" aria-label="Pausar">
+      <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+      <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button type="button" class="icon-btn" id="btn-mute" aria-label="Silenciar">
+      <svg class="i-vol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+      <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16 9l6 6M22 9l-6 6"/></svg>
+    </button>
+    <input type="range" id="volume" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+    <button type="button" class="live" id="btn-live" aria-label="Ir para o ao vivo"><span class="live-dot"></span>Ao vivo</button>
+    <span class="lag" id="lag"></span>
+    <span class="spacer"></span>
+    <button type="button" class="text-btn" id="btn-stats" aria-expanded="false" aria-controls="stats">Estatísticas</button>
+    <button type="button" class="icon-btn" id="btn-full" aria-label="Tela cheia">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
+    </button>
+  </div>
+  <dl class="stats" id="stats" hidden></dl>
+</dialog>
+
+<script src="vendor/hls.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "siteName": "Central Fonte Grande",
+  "http": { "host": "0.0.0.0", "port": 8080, "auth": null },
+  "snmp": {
+    "traps": {
+      "enabled": true,
+      "targets": [{ "host": "192.168.1.2", "port": 162 }],
+      "community": "public",
+      "version": "1",
+      "sendStartup": true
+    }
+  },
+  "events": { "file": "/var/lib/livesafe/events.jsonl", "maxBytes": 2097152, "memory": 1000 },
+  "central": { "offlineSeconds": 10, "cacheMB": 64, "stateIntervalMs": 500 },
+  "sites": [
+    { "id": "fonte-grande", "name": "Fonte Grande", "url": "http://10.10.1.21:8080", "user": "livesafe", "password": "troque-esta-senha" },
+    { "id": "serra", "name": "Serra", "url": "http://10.10.2.21:8080", "user": "livesafe", "password": "troque-esta-senha" },
+    { "id": "morro-do-ceu", "name": "Morro do Céu (Guarapari)", "url": "http://10.10.3.21:8080", "user": "livesafe", "password": "troque-esta-senha" },
+    { "id": "pedra-azul", "name": "Pedra Azul", "url": "http://10.10.8.21:8080", "user": "livesafe", "password": "troque-esta-senha" }
+  ]
+}
