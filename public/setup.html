@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuração — LiveSafe</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="setup-page">
+<header class="top">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><rect class="dot" x="16" y="8" width="3" height="3"/></svg>
+    <span class="brand-name">LiveSafe</span>
+    <span class="brand-site" id="role-label">Configuração</span>
+  </div>
+  <a class="btn ghost back-link" href="./" id="back-link">Voltar ao painel</a>
+</header>
+
+<div class="setup-loading" id="loading">Lendo a configuração e procurando placas de captura…</div>
+
+<main class="setup" id="setup" hidden>
+  <nav class="steps" aria-label="Etapas da configuração">
+    <ol id="steps"></ol>
+    <dl class="host-card" id="host-card"></dl>
+  </nav>
+  <form class="step" id="step" novalidate>
+    <div id="step-body"></div>
+    <p class="form-error" id="form-error" role="alert" hidden></p>
+    <div class="step-nav">
+      <button type="button" class="btn ghost" id="prev">Voltar</button>
+      <button type="submit" class="btn primary" id="next">Continuar</button>
+    </div>
+  </form>
+</main>
+
+<div class="applying" id="applying" hidden>
+  <div class="applying-box" role="status" aria-live="polite">
+    <div class="spinner" aria-hidden="true"></div>
+    <p id="applying-text">Salvando e reiniciando o LiveSafe…</p>
+  </div>
+</div>
+
+<script src="setup.js"></script>
+</body>
+</html>

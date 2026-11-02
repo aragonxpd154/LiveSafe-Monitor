@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { logger } = require('./log');
+const { createChecker } = require('./auth');
 
 const log = logger('http');
 const PUBLIC = path.join(__dirname, '..', 'public');
@@ -22,6 +23,7 @@ function loadStatic() {
     if (TYPES[ext]) add('/' + f, path.join(PUBLIC, f), TYPES[ext]);
   }
   files['/'] = files['/index.html'];
+  if (files['/setup.html']) files['/setup'] = files['/setup.html'];
   // Player HLS servido localmente: o painel funciona sem internet.
   try {
     add('/vendor/hls.js', require.resolve('hls.js/dist/hls.light.min.js'), TYPES['.js']);
@@ -35,7 +37,7 @@ function loadStatic() {
 // menos dependências e nada para atualizar.
 function createServer(app, cfg) {
   const files = loadStatic();
-  const auth = cfg.auth && cfg.auth.user ? 'Basic ' + Buffer.from(`${cfg.auth.user}:${cfg.auth.password || ''}`).toString('base64') : null;
+  const auth = createChecker(cfg.auth);
   const sse = new Map(); // res -> { interval, last }
   const mjpeg = new Map();
 
@@ -44,11 +46,26 @@ function createServer(app, cfg) {
     res.end(JSON.stringify(obj));
   }
 
-  function authorized(req) {
-    if (!auth) return true;
-    const a = Buffer.from(req.headers.authorization || '');
-    const b = Buffer.from(auth);
-    return a.length === b.length && crypto.timingSafeEqual(a, b);
+  function readJson(req, limit = 512 * 1024) {
+    return new Promise((resolve, reject) => {
+      const parts = [];
+      let size = 0;
+      req.on('data', (d) => {
+        size += d.length;
+        if (size > limit) {
+          reject(new Error('Requisição grande demais'));
+          req.destroy();
+        } else parts.push(d);
+      });
+      req.on('end', () => {
+        try {
+          resolve(parts.length ? JSON.parse(Buffer.concat(parts).toString('utf8')) : {});
+        } catch (e) {
+          reject(new Error('JSON inválido'));
+        }
+      });
+      req.on('error', reject);
+    });
   }
 
   function hlsHeaders(name, len) {
@@ -69,9 +86,26 @@ function createServer(app, cfg) {
       const h = app.health();
       return json(res, h.ok ? 200 : 503, h);
     }
-    if (!authorized(req)) {
+    // Instalador para novos Pis, servido pela rede interna (sem segredos dentro).
+    if (req.method === 'GET' && (p === '/instalar.sh' || p === '/pacote.tar.gz') && app.installer) {
+      return app.installer.handle(p, req, res).catch((e) => json(res, 500, { error: e.message }));
+    }
+    const a = auth.check(req);
+    if (!a.ok) {
+      if (a.locked) return json(res, 429, { error: 'Muitas tentativas de senha. Aguarde 1 minuto.' });
       res.writeHead(401, { 'WWW-Authenticate': 'Basic realm="LiveSafe", charset="UTF-8"' });
       return res.end('Autenticação necessária');
+    }
+
+    if (p.startsWith('/api/setup') && app.setup) {
+      try {
+        const body = req.method === 'POST' ? await readJson(req) : null;
+        const r = await app.setup.handle(req.method, p, body);
+        if (r) return json(res, r.status || 200, r.body);
+      } catch (e) {
+        return json(res, 400, { error: e.message });
+      }
+      return json(res, 404, { error: 'Não encontrado' });
     }
 
     if (req.method === 'GET' && files[p]) {

@@ -175,15 +175,24 @@ function load(file) {
   } catch (e) {
     throw new Error(`Não foi possível ler ${abs}: ${e.message}`);
   }
+  const cfg = fromObject(raw, path.dirname(abs));
+  cfg.file = abs;
+  cfg.raw = raw;
+  return cfg;
+}
+
+// Valida e completa uma configuração (usado também pelo assistente antes de gravar).
+function fromObject(raw, baseDir = process.cwd()) {
+  if (!isObj(raw)) throw new Error('A configuração deve ser um objeto JSON');
   const cfg = merge(DEFAULTS, raw);
   cfg.defaults = merge(DEFAULTS.defaults, raw.defaults || {});
   const rawCh = Array.isArray(raw.channels) ? raw.channels : [];
   const rawSites = Array.isArray(raw.sites) ? raw.sites : [];
-  if (rawCh.length === 0 && rawSites.length === 0) {
-    throw new Error('Configure ao menos um canal em "channels" (Pi de borda) ou um Pi em "sites" (servidor central)');
-  }
   cfg.channels = rawCh.map((c, i) => normalizeChannel(c, i, cfg.defaults));
   cfg.sites = rawSites.map((s, i) => normalizeSite(s, i));
+  // Sem canais nem Pis: o serviço sobe só com o painel, em modo "a configurar".
+  cfg.role = raw.role === 'central' || raw.role === 'edge' ? raw.role : rawSites.length ? 'central' : 'edge';
+  cfg.setupPending = cfg.channels.length === 0 && cfg.sites.length === 0;
   const siteIds = new Set();
   for (const s of cfg.sites) {
     if (siteIds.has(s.id)) throw new Error(`id de site repetido: ${s.id}`);
@@ -198,12 +207,13 @@ function load(file) {
   }
   num(cfg.http, 'port', 1, 65535, 'http');
   if (!Array.isArray(cfg.snmp.traps.targets)) cfg.snmp.traps.targets = [];
+  for (const [i, t] of cfg.snmp.traps.targets.entries()) {
+    if (!t || !t.host) throw new Error(`snmp.traps.targets[${i}]: informe o host`);
+  }
   cfg.snmp.traps.version = String(cfg.snmp.traps.version) === '2c' ? '2c' : '1';
   // Caminhos relativos ficam relativos ao config.json.
-  const base = path.dirname(abs);
-  if (cfg.events.file) cfg.events.file = path.resolve(base, cfg.events.file);
-  cfg.file = abs;
+  if (cfg.events.file) cfg.events.file = path.resolve(baseDir, cfg.events.file);
   return cfg;
 }
 
-module.exports = { load, DEFAULTS, normalizeChannel, normalizeSite };
+module.exports = { load, fromObject, DEFAULTS, normalizeChannel, normalizeSite };

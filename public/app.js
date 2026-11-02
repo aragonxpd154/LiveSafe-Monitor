@@ -704,6 +704,11 @@
 
   // ---------- conexão ao vivo (SSE) ----------
   function onState(s) {
+    // Instalação nova, ainda sem canais nem Pis: vai direto para o assistente.
+    if (s.setupPending) {
+      location.replace('setup');
+      return;
+    }
     clockOffset = s.now - Date.now();
     lastState = s;
     const t = now();

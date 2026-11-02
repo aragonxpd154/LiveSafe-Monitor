@@ -55,7 +55,7 @@ Um Pi num abrigo não tem ninguém do lado para apertar botão, então cada tipo
 | Pi inteiro congela (kernel, calor) | watchdog de hardware do Raspberry Pi: reinicia a placa | 14 s + boot |
 | Enlace com o abrigo cai | central alarma "sem comunicação", reconecta sozinho e traz as ocorrências do período fora; o player tenta de novo a cada 3 s | assim que o enlace volta |
 
-O instalador liga o watchdog de hardware automaticamente quando detecta um Raspberry Pi (pode pedir um reboot na primeira vez). Para não ligar: `sudo ./deploy/install.sh edge --sem-watchdog-hw`. O que o vigia fez fica em `journalctl -t livesafe-watchdog`.
+Num Raspberry Pi, o instalador pergunta se deve ligar o watchdog de hardware (recomendado; pode pedir um reboot na primeira vez). O que o vigia fez fica em `journalctl -t livesafe-watchdog`.
 
 ## Player ao vivo
 
@@ -71,34 +71,75 @@ Canais só de áudio (rádios FM) ganham medidores grandes no lugar da imagem e 
 
 ## Instalação
 
-Requisitos: Raspberry Pi 4 (2 GB ou mais) com Raspberry Pi OS Bookworm 64 bits. O servidor central pode ser outro Pi ou qualquer Debian/Ubuntu.
+Requisitos: Raspberry Pi 4 (2 GB ou mais) com Raspberry Pi OS Bookworm 64 bits, de preferência a versão Lite. O servidor central pode ser outro Pi ou qualquer Debian/Ubuntu.
 
-### Pi de borda (em cada abrigo)
+A instalação tem duas partes: o **instalador** pergunta pelo terminal (SSH) o papel da máquina, o nome do local e a senha do painel, e instala tudo; depois, o **assistente no navegador** configura a placa de captura (Pi) ou os Pis dos abrigos (central).
 
-```bash
-git clone https://github.com/aragonxpd154/LiveSafe-Monitor.git
-cd LiveSafe-Monitor
-sudo ./deploy/install.sh edge
-./scripts/list-devices.sh          # mostra /dev/videoN e o nome ALSA da placa HDMI-USB
-sudo nano /etc/livesafe/config.json
-sudo systemctl restart livesafe
-```
+![Instalador no terminal](image/instalador.png)
 
-O painel do Pi fica em `http://<ip-do-pi>:8080`.
+### 1. Instalar
 
-### Servidor central
+Escolha um dos três caminhos. Os três usam o mesmo instalador e servem tanto para o Pi de borda quanto para o central.
+
+**Com internet (GitHub):**
 
 ```bash
-sudo ./deploy/install.sh central
-sudo nano /etc/livesafe/config.json   # cadastre o IP de cada Pi em "sites"
-sudo systemctl restart livesafe
+curl -fsSL https://raw.githubusercontent.com/aragonxpd154/LiveSafe-Monitor/main/install.sh | sudo bash
 ```
 
-Logs ao vivo: `journalctl -u livesafe -f`.
+**Pelo servidor central**, para Pis que enxergam o central mas não a internet. O assistente do central mostra este comando já com o IP certo:
 
-## Configuração
+```bash
+curl -fsSL http://<ip-do-central>:8080/instalar.sh | sudo bash
+```
 
-Há dois exemplos comentados aqui: [`config.edge.example.json`](config.edge.example.json) (Pi de borda) e [`config.central.example.json`](config.central.example.json) (servidor central).
+**Sem internet (pendrive).** Baixe `livesafe-offline-arm64.tar.gz` na página de [releases](https://github.com/aragonxpd154/LiveSafe-Monitor/releases/latest). O arquivo tem cerca de 250 MB e já traz o ffmpeg, o Node.js e todas as dependências para o Raspberry Pi OS Bookworm 64 bits. No Pi:
+
+```bash
+tar -xzf livesafe-offline-arm64.tar.gz
+sudo ./livesafe-monitor/install.sh
+```
+
+Se o central for instalado a partir do pacote offline, ele guarda esses pacotes e os entrega aos Pis que instalarem pelo segundo caminho. Assim, um Pi sem internet instala tudo só falando com o central.
+
+**Gerar o pacote offline no seu PC.** Não precisa de Pi nem de sudo: qualquer computador Debian/Ubuntu com internet (Zorin OS, por exemplo) monta o pacote para o Raspberry Pi OS Bookworm 64 bits, sem instalar nada no PC:
+
+```bash
+sudo apt install dpkg-dev debian-archive-keyring gnupg curl   # só na primeira vez
+./scripts/build-offline-bundle.sh --pi                         # gera dist/livesafe-offline-arm64.tar.gz
+```
+
+O script baixa os pacotes dos repositórios oficiais do Debian e do Raspberry Pi, conferindo as assinaturas, e leva poucos minutos. Rodando com `sudo` e sem `--pi` num Pi com internet, ele gera o pacote para o sistema daquele Pi. O GitHub Actions também gera os dois pacotes a cada tag `v*` (workflow `release.yml`).
+
+Rodar o instalador de novo atualiza o LiveSafe e mantém a configuração, os canais e as senhas.
+
+<details>
+<summary>Instalação automatizada, sem perguntas</summary>
+
+```bash
+curl -fsSL …/install.sh | sudo LIVESAFE_NONINTERACTIVE=1 LIVESAFE_ROLE=edge LIVESAFE_SITE="Pedra Azul" LIVESAFE_PASSWORD='…' bash
+```
+
+`LIVESAFE_ROLE` é `edge` ou `central`. Sem `LIVESAFE_PASSWORD`, uma senha é gerada e mostrada no fim. `LIVESAFE_HW_WATCHDOG=0` não liga o watchdog de hardware.
+</details>
+
+### 2. Configurar no navegador
+
+Ao terminar, o instalador mostra o endereço `http://<ip>:8080/setup`. Entre com o usuário `admin` e a senha que você criou.
+
+- **No Pi de borda**, o assistente procura a placa HDMI-USB, sugere o formato e a resolução, e o botão **Testar entrada** mostra um quadro do receptor e o nível do áudio antes de salvar. Também dá para usar um endereço de rede (UDP do IRD, RTSP, HTTP) ou montar um canal só de rádio.
+- **No central**, você cadastra cada Pi pelo IP e pela senha dele; **Testar conexão** confirma o nome do abrigo e os canais.
+- As etapas seguintes definem os destinos das traps, os tempos de alarme e a qualidade do vídeo ao vivo. Ao salvar, o LiveSafe reinicia já com a configuração nova.
+
+| Pi de borda: entrada de sinal | Central: Pis dos abrigos |
+| :---: | :---: |
+| ![Assistente testando a entrada](image/assistente-entrada.png) | ![Assistente cadastrando um Pi](image/assistente-central.png) |
+
+O assistente continua disponível em `/setup` para mudanças futuras. Logs ao vivo: `journalctl -u livesafe -f`.
+
+## Configuração manual
+
+O assistente grava `/var/lib/livesafe/config.json`, que também pode ser editado à mão (depois, `sudo systemctl restart livesafe`). Há dois exemplos: [`config.edge.example.json`](config.edge.example.json) (Pi de borda) e [`config.central.example.json`](config.central.example.json) (servidor central). A senha do painel é guardada como hash (`passwordHash`); `password` em texto também é aceito.
 
 ### Canal com placa HDMI-USB
 
@@ -127,7 +168,7 @@ Outras entradas que o ffmpeg abre também servem, com `"url"` no lugar de `input
 ]
 ```
 
-`user` e `password` são os mesmos de `http.auth` no Pi. Recomendo ligar a senha nos Pis, já que o painel deles permite reiniciar a captura.
+`user` e `password` são o usuário e a senha do painel daquele Pi.
 
 ### Ajustes mais usados
 
@@ -191,19 +232,24 @@ Gera um sinal em loop com trechos de imagem normal, congelada, preta e silêncio
 ## Estrutura
 
 ```
+install.sh      instalador com telas no terminal (online, pelo central ou offline)
 src/
   index.js      inicialização, laço de 1 s, /healthz e encerramento limpo
   channel.js    um canal: processo ffmpeg, análise, religamento, HLS
   detectors.js  análise de quadro, níveis de áudio e histerese
   encoder.js    escolha do encoder H.264 (hardware do Pi ou software)
   remote.js     servidor central: conexão com os Pis e cache do proxy
+  setup.js      assistente: testar entrada, testar Pi, salvar e reiniciar
+  devices.js    descoberta de placas V4L2 e ALSA
+  installer.js  /instalar.sh e o pacote servidos pelo central
+  auth.js       senha do painel (hash scrypt, bloqueio após erros)
   snmp.js       traps e agente SNMP
   web.js        servidor HTTP, SSE, HLS e proxy
   events.js     histórico de ocorrências
   system.js     temperatura, CPU e memória do host
-public/         painel e player (sem dependências externas)
-deploy/         instalador, serviço systemd e vigia (watchdog)
-scripts/        descoberta de placas e sinal de teste
+public/         painel, player e assistente (sem dependências externas)
+deploy/         instalação sem perguntas, serviço systemd e vigia (watchdog)
+scripts/        descoberta de placas, sinal de teste e geração dos pacotes
 legacy/         versões 1 a 4, só para consulta
 ```
 

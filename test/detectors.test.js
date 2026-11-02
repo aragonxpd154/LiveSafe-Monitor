@@ -103,3 +103,28 @@ test('config: servidor central só com sites', () => {
   assert.equal(s.url, 'http://10.0.0.5:8080');
   assert.throws(() => config.normalizeSite({ id: 'x' }, 0), /url/);
 });
+
+test('placa HDMI-USB (MS2109): lê formatos, resoluções e quadros por segundo do v4l2-ctl', () => {
+  const { parseFormats } = require('../src/devices');
+  const out = `ioctl: VIDIOC_ENUM_FMT
+\tType: Video Capture
+
+\t[0]: 'MJPG' (Motion-JPEG, compressed)
+\t\tSize: Discrete 1920x1080
+\t\t\tInterval: Discrete 0.033s (30.000 fps)
+\t\tSize: Discrete 1280x720
+\t\t\tInterval: Discrete 0.017s (60.000 fps)
+\t\t\tInterval: Discrete 0.033s (30.000 fps)
+\t[1]: 'YUYV' (YUYV 4:2:2)
+\t\tSize: Discrete 1920x1080
+\t\t\tInterval: Discrete 0.200s (5.000 fps)
+\t\tSize: Discrete 640x480
+\t\t\tInterval: Discrete 0.033s (30.000 fps)
+`;
+  const f = parseFormats(out);
+  assert.equal(f.length, 2);
+  assert.equal(f[0].fourcc, 'MJPG');
+  assert.deepEqual(f[0].sizes.map((s) => `${s.width}x${s.height}`), ['1920x1080', '1280x720']);
+  assert.deepEqual(f[0].sizes[1].fps, [60, 30]);
+  assert.equal(f[1].sizes[0].fps[0], 5);
+});
