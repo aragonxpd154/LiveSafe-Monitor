@@ -24,7 +24,7 @@ Os tempos e limiares são configuráveis por canal. Tela preta tem prioridade so
  Receptor ──HDMI──▶ placa HDMI-USB ──USB──┐
                                           ▼
  ┌─────────────────────────────────────────┐   HTTP/TCP    ┌──────────────────────────────┐
- │ Raspberry Pi 4 — LiveSafe de borda      │──────────────▶│ Servidor LiveSafe central    │
+ │ Raspberry Pi 4 - LiveSafe de borda      │──────────────▶│ Servidor LiveSafe central    │
  │  • detecta falhas e manda traps         │ estado (SSE)  │  • estado de todos os Pis    │
  │  • gera o stream HLS na RAM             │ vídeo (HLS)   │  • alarme "sem comunicação"  │──▶ navegadores
  └─────────────────────────────────────────┘               │  • repassa o vídeo com cache │    (painel e player)
