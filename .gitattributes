@@ -1,0 +1,6 @@
+# O instalador pode baixar o tarball do branch main (codeload) quando não há release.
+# A placa (hardware, documentação, gerador e referências, ~60 MB) não vai para o Pi.
+hardware/ export-ignore
+docs/ export-ignore
+tools/ export-ignore
+ref/ export-ignore

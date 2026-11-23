@@ -1,6 +1,8 @@
-# Changelog — Placa LiveSafe
+# Changelog — LiveSafe
 
-## 1.0 (2026-11-23) — primeira revisão, não fabricada
+## Placa LiveSafe
+
+### 1.0 (2026-11-23) — primeira revisão, não fabricada
 
 - Arquitetura: Raspberry Pi CM4 + TC358743 (HDMI → CSI-2) + Si2141/Si2183-B60 (ISDB-Tb) + GS2961A (ASI) + 2× FX2LP + hub USB2514B.
 - Pinagens do Si2183, Si2141 e GS2961A conferidas nos datasheets (`tools/pinagens.py`).
@@ -14,3 +16,8 @@
 - Trocas por estoque na LCSC: fusível 2 A/24 V (SMD1812P200TF/24), ferrites BLM21AG102SN1D, 33 µF TDK 1206,
   16 pF FH 0402, LED amarelo 19-217/Y5C-AM1N1VY, 47 nF CL05B473KO5NNNC, cristal FC-12M 32.7680KA-A3.
 - Pendências antes da produção: ver `docs/08-revisao-e-riscos.md`.
+
+## Software
+
+- **5.0.1 / 5.0.0 (2026-11-02)** — reescrita: Pi de borda + servidor central, streaming HLS, instalador e
+  assistente no navegador. Detalhes no histórico do README.

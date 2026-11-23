@@ -16,7 +16,7 @@ from symlib import G, _f, esc, disp_len
 AUTHOR = 'Marcos Silva dos Santos'
 NICK = 'MarcosObel'
 COMPANY = 'LiveSafe - monitoração de sinal de TV e rádio'
-REPO = 'github.com/aragonxpd154/LiveSafe-Placa'
+REPO = 'github.com/aragonxpd154/LiveSafe-Monitor'
 DATE = '2026-11-23'
 PROJECT = 'livesafe-placa'
 POWER_NETS = ('GND', '+12V', '+5V', '+3V3', 'CM4_3V3')

@@ -11,7 +11,7 @@
     (rev "1.0")
     (company "LiveSafe - monitoração de sinal de TV e rádio")
     (comment 1 "Projeto e PCB: Marcos Silva dos Santos (MarcosObel)")
-    (comment 2 "github.com/aragonxpd154/LiveSafe-Placa - CERN-OHL-S-2.0")
+    (comment 2 "github.com/aragonxpd154/LiveSafe-Monitor - CERN-OHL-S-2.0")
     (comment 3 "4 camadas JLC04161H-7628, 1,6 mm: L1 sinal / L2 GND / L3 3,3 V e 5 V / L4 sinal")
   )
 

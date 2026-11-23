@@ -6,3 +6,19 @@ data/
 *.zip
 .env
 dist/
+
+# Placa LiveSafe: temporários do KiCad, do roteador e do Python
+__pycache__/
+*.kicad_prl
+*-backups/
+fp-info-cache
+*.dsn
+*.ses
+*-freerouting.log
+fr*.log
+.fanout-falhas.json
+*.melhor
+tools/gerador-kicad/freerouting-*.jar
+
+# o Gerber da placa vai no repositório (o *.zip acima é para os pacotes do software)
+!hardware/fabricacao/**/*-gerber.zip
