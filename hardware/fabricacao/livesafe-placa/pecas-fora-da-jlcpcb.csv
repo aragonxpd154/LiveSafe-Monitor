@@ -1,0 +1,14 @@
+Qtd,Valor,Referências,Footprint,Fabricante,Código (MPN),Como entra
+1,12 V DC,J1,"PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal",Phoenix Contact,"MSTBA 2,5/2-G-5,08",solda manual (THT)
+1,JK0654219NL,J2,RJ45_Pulse_JK0654219NL_Horizontal,Pulse,JK0654219NL,solda manual (THT)
+1,RF IN 75 Ohm,J4,BNC_Amphenol_B6252HB-NPP3G-50_Horizontal,Amphenol RF,B6252HB-NPP3G-75,solda manual (THT)
+1,ASI IN 75 Ohm,J5,BNC_Amphenol_B6252HB-NPP3G-50_Horizontal,Amphenol RF,B6252HB-NPP3G-75,solda manual (THT)
+1,USB serviço,J6,USB_Micro-B_Wuerth_614105150721_Vertical,Wurth,614105150721,solda manual (THT)
+1,USB-A,J7,USB_A_Molex_67643_Horizontal,Molex,67643-0910,solda manual (THT)
+1,ENTRADAS,J8,"PhoenixContact_MC_1,5_6-G-3.81_1x06_P3.81mm_Horizontal",Phoenix Contact,"MC 1,5/6-G-3,81",solda manual (THT)
+1,RELÉS,J9,"PhoenixContact_MC_1,5_12-G-3.81_1x12_P3.81mm_Horizontal",Phoenix Contact,"MC 1,5/12-G-3,81",solda manual (THT)
+1,VENTOINHA 12 V,J10,Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical,Molex,22-27-2041,solda manual (THT)
+1,6.8uH,L1,L_Bourns_SRP7028A_7.3x6.6mm,Bourns,SRP7028A-6R8M,Global Sourcing da JLCPCB ou peça consignada
+1,TC358743XBG,U9,Toshiba_P-TFBGA64-0606-0.65,Toshiba,TC358743XBG,Global Sourcing da JLCPCB ou peça consignada
+1,CM4104032,U1,Raspberry_Pi_CM4_DF40,Raspberry Pi,CM4104032,encaixado à mão nos conectores CN1/CN2
+1,CR1220,BT1 (bateria),-,-,CR1220,colocada à mão no suporte

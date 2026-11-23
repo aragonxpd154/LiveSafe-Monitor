@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Placa LiveSafe em 3D</title>
+<style>
+  :root { --bg: #0e1512; --fg: #e8efe9; --mut: #9fb3a6; --acc: #3fbf7f; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  #c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  header { position: fixed; left: 16px; top: 14px; right: 16px; pointer-events: none; }
+  h1 { margin: 0; font-size: 18px; letter-spacing: .2px; }
+  p { margin: 4px 0 0; color: var(--mut); font-size: 13px; max-width: 60ch; }
+  .bar { position: fixed; left: 16px; bottom: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  button { background: #1b2a22; color: var(--fg); border: 1px solid #2f4a3b; border-radius: 8px;
+    padding: 7px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+  button[aria-pressed="true"] { border-color: var(--acc); color: #fff; }
+  body.render header, body.render .bar { display: none; }
+  body.render, html:has(body.render) { background: transparent; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<header>
+  <h1>Placa LiveSafe v1.0</h1>
+  <p>160 × 100 mm, 4 camadas. Arraste para girar, role para aproximar. Projeto de Marcos Silva dos Santos (MarcosObel).</p>
+</header>
+<div class="bar">
+  <button id="bTopo">Topo</button>
+  <button id="bIso">3D</button>
+  <button id="bFundo">Fundo</button>
+  <button id="bComp" aria-pressed="true">Componentes</button>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const render = location.search.includes('render');
+if (render) document.body.classList.add('render');
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.001, 10);
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x2a3a30, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(-0.3, -0.4, 0.8); scene.add(sun);
+const fill = new THREE.DirectionalLight(0xffffff, 0.8); fill.position.set(0.4, 0.3, 0.5); scene.add(fill);
+
+let model, center = new THREE.Vector3(), size = 0.16, comps = [];
+function resize() {
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+function view(kind) {
+  const d = size * (kind === 'iso' ? 2.35 : 2.05);
+  const p = { topo: [0, -0.0001, d], fundo: [0, 0.0001, -d], iso: [-0.42 * d, -0.62 * d, 0.66 * d] }[kind];
+  camera.position.set(center.x + p[0], center.y + p[1], center.z + p[2]);
+  camera.up.set(0, kind === 'iso' ? 0 : 1, kind === 'iso' ? 1 : 0);
+  controls.target.copy(center); controls.update();
+}
+window.__componentes = (on) => {
+  comps.forEach(o => o.visible = on);
+  document.getElementById('bComp').setAttribute('aria-pressed', String(on));
+};
+window.__vista = view;
+
+new GLTFLoader().load('modelos/livesafe-placa.glb', (g) => {
+  model = g.scene; scene.add(model);
+  model.traverse(o => {
+    if (o.isMesh && !/superficie|PCB/.test(o.name)) comps.push(o);
+  });
+  const box = new THREE.Box3().setFromObject(model);
+  box.getCenter(center); size = box.getSize(new THREE.Vector3()).length() * 0.62;
+  view(location.hash === '#topo' ? 'topo' : 'iso');
+  window.__pronto = 'livesafe-placa';
+});
+document.getElementById('bTopo').onclick = () => view('topo');
+document.getElementById('bIso').onclick = () => view('iso');
+document.getElementById('bFundo').onclick = () => view('fundo');
+document.getElementById('bComp').onclick = (e) => window.__componentes(e.target.getAttribute('aria-pressed') !== 'true');
+(function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+</script>
+</body>
+</html>

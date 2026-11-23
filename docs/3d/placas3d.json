@@ -1,0 +1,2513 @@
+{
+ "livesafe-placa": {
+  "placa": "livesafe-placa",
+  "largura_mm": 160.0,
+  "altura_mm": 100.0,
+  "furos": 1156,
+  "vias": 1038,
+  "componentes": [
+   {
+    "ref": "C35",
+    "valor": "100nF",
+    "x": 29.66,
+    "y": 23.73,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB9",
+    "valor": "600R",
+    "x": 63.19,
+    "y": 66.29,
+    "lado": "topo"
+   },
+   {
+    "ref": "C132",
+    "valor": "100nF",
+    "x": 82.73,
+    "y": 77.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "C130",
+    "valor": "100nF",
+    "x": 69.06,
+    "y": 74.27,
+    "lado": "topo"
+   },
+   {
+    "ref": "C14",
+    "valor": "100nF",
+    "x": 110.36,
+    "y": 4.07,
+    "lado": "topo"
+   },
+   {
+    "ref": "C96",
+    "valor": "10nF",
+    "x": 58.39,
+    "y": 94.27,
+    "lado": "topo"
+   },
+   {
+    "ref": "C9",
+    "valor": "22uF",
+    "x": 79.5,
+    "y": 13.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "C99",
+    "valor": "1uF",
+    "x": 56.25,
+    "y": 87.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "U3",
+    "valor": "LMR33630ADDA",
+    "x": 111.0,
+    "y": 9.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R90",
+    "valor": "10k",
+    "x": 70.8,
+    "y": 66.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C79",
+    "valor": "100nF",
+    "x": 54.79,
+    "y": 80.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "C83",
+    "valor": "470nF",
+    "x": 40.75,
+    "y": 89.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "BT1",
+    "valor": "CR1220",
+    "x": 112.0,
+    "y": 92.59,
+    "lado": "topo"
+   },
+   {
+    "ref": "U22",
+    "valor": "CY7C68013A-56LTXC",
+    "x": 77.0,
+    "y": 71.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "D9",
+    "valor": "amarelo",
+    "x": 124.26,
+    "y": 59.8,
+    "lado": "topo"
+   },
+   {
+    "ref": "R91",
+    "valor": "10k",
+    "x": 83.2,
+    "y": 70.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "C22",
+    "valor": "47uF",
+    "x": 84.0,
+    "y": 63.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R96",
+    "valor": "2.2k",
+    "x": 71.24,
+    "y": 97.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "R47",
+    "valor": "10k",
+    "x": 62.94,
+    "y": 71.76,
+    "lado": "topo"
+   },
+   {
+    "ref": "R41",
+    "valor": "0",
+    "x": 53.24,
+    "y": 66.06,
+    "lado": "topo"
+   },
+   {
+    "ref": "Q1",
+    "valor": "AO3401A",
+    "x": 133.5,
+    "y": 5.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "J1",
+    "valor": "12 V DC",
+    "x": 149.97,
+    "y": 9.94,
+    "lado": "topo"
+   },
+   {
+    "ref": "R14",
+    "valor": "330",
+    "x": 35.0,
+    "y": 39.41,
+    "lado": "topo"
+   },
+   {
+    "ref": "C60",
+    "valor": "1nF C0G",
+    "x": 38.5,
+    "y": 69.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "R33",
+    "valor": "0",
+    "x": 37.51,
+    "y": 68.45,
+    "lado": "topo"
+   },
+   {
+    "ref": "U10",
+    "valor": "TLV73325",
+    "x": 38.0,
+    "y": 34.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "D6",
+    "valor": "1N4148W",
+    "x": 145.75,
+    "y": 26.13,
+    "lado": "topo"
+   },
+   {
+    "ref": "R116",
+    "valor": "1k",
+    "x": 155.9,
+    "y": 94.01,
+    "lado": "topo"
+   },
+   {
+    "ref": "C114",
+    "valor": "100nF",
+    "x": 40.56,
+    "y": 9.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C67",
+    "valor": "10uF",
+    "x": 41.98,
+    "y": 62.9,
+    "lado": "topo"
+   },
+   {
+    "ref": "R13",
+    "valor": "1k",
+    "x": 99.01,
+    "y": 39.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C147",
+    "valor": "4.7uF",
+    "x": 67.81,
+    "y": 91.47,
+    "lado": "topo"
+   },
+   {
+    "ref": "R65",
+    "valor": "10k",
+    "x": 56.25,
+    "y": 91.51,
+    "lado": "topo"
+   },
+   {
+    "ref": "R43",
+    "valor": "0",
+    "x": 55.31,
+    "y": 64.49,
+    "lado": "topo"
+   },
+   {
+    "ref": "R69",
+    "valor": "105 1%",
+    "x": 62.15,
+    "y": 95.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C100",
+    "valor": "10nF",
+    "x": 56.25,
+    "y": 85.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "C7",
+    "valor": "22uF",
+    "x": 81.75,
+    "y": 7.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "U30",
+    "valor": "EMC2301",
+    "x": 104.0,
+    "y": 70.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C149",
+    "valor": "100nF",
+    "x": 130.75,
+    "y": 48.01,
+    "lado": "topo"
+   },
+   {
+    "ref": "C26",
+    "valor": "100nF",
+    "x": 84.0,
+    "y": 65.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "U28",
+    "valor": "ULN2003A",
+    "x": 121.0,
+    "y": 66.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C94",
+    "valor": "1uF",
+    "x": 60.12,
+    "y": 94.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "R59",
+    "valor": "33",
+    "x": 67.6,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "C134",
+    "valor": "100nF",
+    "x": 83.23,
+    "y": 67.56,
+    "lado": "topo"
+   },
+   {
+    "ref": "J10",
+    "valor": "VENTOINHA 12 V",
+    "x": 100.19,
+    "y": 64.02,
+    "lado": "topo"
+   },
+   {
+    "ref": "R40",
+    "valor": "0",
+    "x": 55.49,
+    "y": 66.06,
+    "lado": "topo"
+   },
+   {
+    "ref": "C106",
+    "valor": "10nF",
+    "x": 60.09,
+    "y": 93.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C136",
+    "valor": "4.7uF",
+    "x": 68.81,
+    "y": 64.97,
+    "lado": "topo"
+   },
+   {
+    "ref": "C18",
+    "valor": "100nF",
+    "x": 102.0,
+    "y": 11.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "R58",
+    "valor": "33",
+    "x": 54.4,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "C87",
+    "valor": "16pF",
+    "x": 49.48,
+    "y": 97.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "C125",
+    "valor": "100nF",
+    "x": 20.34,
+    "y": 1.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "C23",
+    "valor": "47uF",
+    "x": 80.25,
+    "y": 63.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "U19",
+    "valor": "USB2514B-I/M2",
+    "x": 45.0,
+    "y": 10.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R38",
+    "valor": "4.7k",
+    "x": 46.34,
+    "y": 70.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "C19",
+    "valor": "10uF",
+    "x": 92.14,
+    "y": 90.8,
+    "lado": "topo"
+   },
+   {
+    "ref": "R79",
+    "valor": "33",
+    "x": 60.26,
+    "y": 82.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C32",
+    "valor": "100nF",
+    "x": 35.2,
+    "y": 37.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "C115",
+    "valor": "100nF",
+    "x": 40.56,
+    "y": 11.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C110",
+    "valor": "18pF",
+    "x": 44.98,
+    "y": 5.56,
+    "lado": "topo"
+   },
+   {
+    "ref": "U18",
+    "valor": "USBLC6-2SC6",
+    "x": 52.5,
+    "y": 10.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "U5",
+    "valor": "TPD4E05U06",
+    "x": 17.6,
+    "y": 23.8,
+    "lado": "topo"
+   },
+   {
+    "ref": "C131",
+    "valor": "100nF",
+    "x": 75.23,
+    "y": 78.94,
+    "lado": "topo"
+   },
+   {
+    "ref": "C64",
+    "valor": "100nF",
+    "x": 50.68,
+    "y": 67.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "U8",
+    "valor": "PCA9517D",
+    "x": 38.6,
+    "y": 41.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C58",
+    "valor": "47pF",
+    "x": 40.8,
+    "y": 22.93,
+    "lado": "topo"
+   },
+   {
+    "ref": "D17",
+    "valor": "BAT54C",
+    "x": 108.5,
+    "y": 82.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "C146",
+    "valor": "100nF",
+    "x": 72.73,
+    "y": 85.81,
+    "lado": "topo"
+   },
+   {
+    "ref": "R70",
+    "valor": "33",
+    "x": 59.75,
+    "y": 88.49,
+    "lado": "topo"
+   },
+   {
+    "ref": "U20",
+    "valor": "TPS2051C",
+    "x": 21.0,
+    "y": 4.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C135",
+    "valor": "100nF",
+    "x": 75.73,
+    "y": 65.81,
+    "lado": "topo"
+   },
+   {
+    "ref": "J2",
+    "valor": "JK0654219NL",
+    "x": 26.38,
+    "y": 53.08,
+    "lado": "topo"
+   },
+   {
+    "ref": "R55",
+    "valor": "33",
+    "x": 66.4,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "C102",
+    "valor": "10nF",
+    "x": 56.5,
+    "y": 93.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "C120",
+    "valor": "4.7uF",
+    "x": 48.19,
+    "y": 3.23,
+    "lado": "topo"
+   },
+   {
+    "ref": "C16",
+    "valor": "22uF",
+    "x": 104.5,
+    "y": 11.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "C80",
+    "valor": "100nF",
+    "x": 63.48,
+    "y": 74.69,
+    "lado": "topo"
+   },
+   {
+    "ref": "R106",
+    "valor": "1k",
+    "x": 130.75,
+    "y": 61.48,
+    "lado": "topo"
+   },
+   {
+    "ref": "R66",
+    "valor": "10k",
+    "x": 56.51,
+    "y": 89.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "R103",
+    "valor": "10k",
+    "x": 137.76,
+    "y": 31.24,
+    "lado": "topo"
+   },
+   {
+    "ref": "C122",
+    "valor": "1uF",
+    "x": 22.62,
+    "y": 1.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "R23",
+    "valor": "100k",
+    "x": 23.48,
+    "y": 30.99,
+    "lado": "topo"
+   },
+   {
+    "ref": "C12",
+    "valor": "100nF 50V",
+    "x": 107.11,
+    "y": 10.92,
+    "lado": "topo"
+   },
+   {
+    "ref": "C143",
+    "valor": "100nF",
+    "x": 78.23,
+    "y": 97.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "R15",
+    "valor": "330",
+    "x": 35.0,
+    "y": 51.31,
+    "lado": "topo"
+   },
+   {
+    "ref": "U27",
+    "valor": "LTV-817S",
+    "x": 131.0,
+    "y": 38.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C70",
+    "valor": "1uF",
+    "x": 47.09,
+    "y": 61.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "C65",
+    "valor": "100nF",
+    "x": 51.18,
+    "y": 68.9,
+    "lado": "topo"
+   },
+   {
+    "ref": "R76",
+    "valor": "33",
+    "x": 62.76,
+    "y": 85.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "D14",
+    "valor": "vermelho",
+    "x": 154.4,
+    "y": 97.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "C20",
+    "valor": "22uF",
+    "x": 89.25,
+    "y": 93.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "C118",
+    "valor": "100nF",
+    "x": 47.48,
+    "y": 14.44,
+    "lado": "topo"
+   },
+   {
+    "ref": "R62",
+    "valor": "37.4 1%",
+    "x": 39.5,
+    "y": 86.78,
+    "lado": "topo"
+   },
+   {
+    "ref": "U26",
+    "valor": "LTV-817S",
+    "x": 131.0,
+    "y": 32.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C51",
+    "valor": "4.7uF",
+    "x": 22.05,
+    "y": 20.21,
+    "lado": "topo"
+   },
+   {
+    "ref": "R118",
+    "valor": "10k",
+    "x": 107.86,
+    "y": 70.83,
+    "lado": "topo"
+   },
+   {
+    "ref": "R99",
+    "valor": "10k",
+    "x": 137.76,
+    "y": 18.24,
+    "lado": "topo"
+   },
+   {
+    "ref": "R30",
+    "valor": "0",
+    "x": 34.62,
+    "y": 30.85,
+    "lado": "topo"
+   },
+   {
+    "ref": "C126",
+    "valor": "12pF",
+    "x": 71.31,
+    "y": 67.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "C137",
+    "valor": "12pF",
+    "x": 69.31,
+    "y": 89.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "R12",
+    "valor": "4.7k",
+    "x": 99.75,
+    "y": 31.29,
+    "lado": "topo"
+   },
+   {
+    "ref": "R84",
+    "valor": "10k",
+    "x": 49.95,
+    "y": 7.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "C76",
+    "valor": "10uF",
+    "x": 52.09,
+    "y": 79.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "U17",
+    "valor": "FSUSB42MUX",
+    "x": 59.0,
+    "y": 15.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R54",
+    "valor": "33",
+    "x": 65.2,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "R75",
+    "valor": "33",
+    "x": 60.26,
+    "y": 83.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R17",
+    "valor": "10k",
+    "x": 38.97,
+    "y": 45.98,
+    "lado": "topo"
+   },
+   {
+    "ref": "R26",
+    "valor": "10k",
+    "x": 29.82,
+    "y": 33.63,
+    "lado": "topo"
+   },
+   {
+    "ref": "C90",
+    "valor": "10nF",
+    "x": 41.25,
+    "y": 79.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "R25",
+    "valor": "2k 1%",
+    "x": 26.71,
+    "y": 23.73,
+    "lado": "topo"
+   },
+   {
+    "ref": "C104",
+    "valor": "1uF",
+    "x": 56.84,
+    "y": 94.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "C24",
+    "valor": "100nF",
+    "x": 84.0,
+    "y": 61.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C151",
+    "valor": "100nF",
+    "x": 100.14,
+    "y": 69.84,
+    "lado": "topo"
+   },
+   {
+    "ref": "D12",
+    "valor": "amarelo",
+    "x": 126.51,
+    "y": 66.36,
+    "lado": "topo"
+   },
+   {
+    "ref": "U21",
+    "valor": "USBLC6-2SC6",
+    "x": 22.5,
+    "y": 13.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R11",
+    "valor": "4.7k",
+    "x": 98.5,
+    "y": 30.64,
+    "lado": "topo"
+   },
+   {
+    "ref": "C34",
+    "valor": "100nF",
+    "x": 24.73,
+    "y": 33.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "D7",
+    "valor": "1N4148W",
+    "x": 141.85,
+    "y": 24.73,
+    "lado": "topo"
+   },
+   {
+    "ref": "C111",
+    "valor": "18pF",
+    "x": 46.98,
+    "y": 5.56,
+    "lado": "topo"
+   },
+   {
+    "ref": "C68",
+    "valor": "1uF",
+    "x": 51.23,
+    "y": 72.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C38",
+    "valor": "100nF",
+    "x": 31.55,
+    "y": 33.12,
+    "lado": "topo"
+   },
+   {
+    "ref": "D10",
+    "valor": "amarelo",
+    "x": 126.51,
+    "y": 62.83,
+    "lado": "topo"
+   },
+   {
+    "ref": "R6",
+    "valor": "100k 1%",
+    "x": 114.41,
+    "y": 6.81,
+    "lado": "topo"
+   },
+   {
+    "ref": "D4",
+    "valor": "PESD0402-140",
+    "x": 37.48,
+    "y": 86.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "R95",
+    "valor": "10k",
+    "x": 81.2,
+    "y": 90.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "C129",
+    "valor": "100nF",
+    "x": 70.79,
+    "y": 73.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "C28",
+    "valor": "100nF",
+    "x": 35.0,
+    "y": 41.42,
+    "lado": "topo"
+   },
+   {
+    "ref": "C21",
+    "valor": "22uF",
+    "x": 96.25,
+    "y": 95.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "R101",
+    "valor": "10k",
+    "x": 137.76,
+    "y": 24.74,
+    "lado": "topo"
+   },
+   {
+    "ref": "C69",
+    "valor": "100nF",
+    "x": 47.98,
+    "y": 73.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C77",
+    "valor": "100nF",
+    "x": 59.69,
+    "y": 65.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C8",
+    "valor": "22uF",
+    "x": 79.5,
+    "y": 11.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "R72",
+    "valor": "33",
+    "x": 60.26,
+    "y": 86.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R45",
+    "valor": "0",
+    "x": 63.45,
+    "y": 69.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "R46",
+    "valor": "0",
+    "x": 63.45,
+    "y": 68.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C142",
+    "valor": "100nF",
+    "x": 74.73,
+    "y": 97.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "C119",
+    "valor": "100nF",
+    "x": 51.17,
+    "y": 12.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "R82",
+    "valor": "12k 1%",
+    "x": 44.01,
+    "y": 4.31,
+    "lado": "topo"
+   },
+   {
+    "ref": "U23",
+    "valor": "CY7C68013A-56LTXC",
+    "x": 75.0,
+    "y": 91.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C141",
+    "valor": "100nF",
+    "x": 69.31,
+    "y": 93.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "C15",
+    "valor": "22uF",
+    "x": 106.75,
+    "y": 7.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "R113",
+    "valor": "10k",
+    "x": 116.53,
+    "y": 66.85,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB8",
+    "valor": "600R",
+    "x": 51.81,
+    "y": 74.54,
+    "lado": "topo"
+   },
+   {
+    "ref": "U29",
+    "valor": "PCF85063A",
+    "x": 104.0,
+    "y": 79.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R61",
+    "valor": "75 1%",
+    "x": 38.48,
+    "y": 83.8,
+    "lado": "topo"
+   },
+   {
+    "ref": "U12",
+    "valor": "Si2141-A10",
+    "x": 45.0,
+    "y": 67.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C127",
+    "valor": "12pF",
+    "x": 70.06,
+    "y": 67.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "C148",
+    "valor": "10uF",
+    "x": 124.25,
+    "y": 72.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "C116",
+    "valor": "100nF",
+    "x": 40.56,
+    "y": 13.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "R89",
+    "valor": "10k",
+    "x": 64.99,
+    "y": 19.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R97",
+    "valor": "2.2k",
+    "x": 73.0,
+    "y": 97.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "L3",
+    "valor": "2.2uH",
+    "x": 92.76,
+    "y": 96.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y5",
+    "valor": "24 MHz",
+    "x": 70.6,
+    "y": 71.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "K2",
+    "valor": "G5V-1 5V",
+    "x": 133.0,
+    "y": 59.45,
+    "lado": "topo"
+   },
+   {
+    "ref": "R74",
+    "valor": "33",
+    "x": 62.76,
+    "y": 87.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R115",
+    "valor": "330",
+    "x": 152.39,
+    "y": 96.61,
+    "lado": "topo"
+   },
+   {
+    "ref": "R5",
+    "valor": "24.9k 1%",
+    "x": 89.92,
+    "y": 5.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "SW1",
+    "valor": "RESET",
+    "x": 110.5,
+    "y": 23.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y4",
+    "valor": "24 MHz",
+    "x": 37.5,
+    "y": 6.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C82",
+    "valor": "1uF",
+    "x": 40.75,
+    "y": 87.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C45",
+    "valor": "10uF",
+    "x": 37.82,
+    "y": 25.86,
+    "lado": "topo"
+   },
+   {
+    "ref": "R94",
+    "valor": "10k",
+    "x": 68.8,
+    "y": 86.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R93",
+    "valor": "2.2k",
+    "x": 70.74,
+    "y": 75.44,
+    "lado": "topo"
+   },
+   {
+    "ref": "C55",
+    "valor": "100nF",
+    "x": 40.43,
+    "y": 24.57,
+    "lado": "topo"
+   },
+   {
+    "ref": "C75",
+    "valor": "100nF",
+    "x": 57.04,
+    "y": 64.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "R102",
+    "valor": "3.3k",
+    "x": 143.25,
+    "y": 28.39,
+    "lado": "topo"
+   },
+   {
+    "ref": "D13",
+    "valor": "verde",
+    "x": 154.4,
+    "y": 93.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "C61",
+    "valor": "1nF C0G",
+    "x": 41.5,
+    "y": 65.27,
+    "lado": "topo"
+   },
+   {
+    "ref": "R10",
+    "valor": "10k",
+    "x": 110.74,
+    "y": 27.34,
+    "lado": "topo"
+   },
+   {
+    "ref": "C49",
+    "valor": "4.7uF",
+    "x": 27.05,
+    "y": 20.21,
+    "lado": "topo"
+   },
+   {
+    "ref": "R86",
+    "valor": "10k",
+    "x": 49.01,
+    "y": 5.56,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y1",
+    "valor": "27 MHz",
+    "x": 38.0,
+    "y": 22.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "U24",
+    "valor": "LTV-817S",
+    "x": 131.0,
+    "y": 19.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C92",
+    "valor": "10nF",
+    "x": 43.75,
+    "y": 79.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C40",
+    "valor": "100nF",
+    "x": 22.18,
+    "y": 31.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C86",
+    "valor": "47nF",
+    "x": 45.25,
+    "y": 81.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "R2",
+    "valor": "100k",
+    "x": 112.5,
+    "y": 13.96,
+    "lado": "topo"
+   },
+   {
+    "ref": "C56",
+    "valor": "47pF",
+    "x": 40.43,
+    "y": 25.82,
+    "lado": "topo"
+   },
+   {
+    "ref": "C50",
+    "valor": "470pF",
+    "x": 23.55,
+    "y": 19.76,
+    "lado": "topo"
+   },
+   {
+    "ref": "R9",
+    "valor": "100k 1%",
+    "x": 94.9,
+    "y": 91.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "R100",
+    "valor": "3.3k",
+    "x": 145.75,
+    "y": 31.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "R67",
+    "valor": "10k",
+    "x": 49.49,
+    "y": 81.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "R71",
+    "valor": "33",
+    "x": 61.76,
+    "y": 88.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "C128",
+    "valor": "100nF",
+    "x": 73.54,
+    "y": 65.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y6",
+    "valor": "24 MHz",
+    "x": 83.5,
+    "y": 96.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C108",
+    "valor": "10nF",
+    "x": 58.11,
+    "y": 92.27,
+    "lado": "topo"
+   },
+   {
+    "ref": "C31",
+    "valor": "100nF",
+    "x": 35.48,
+    "y": 54.34,
+    "lado": "topo"
+   },
+   {
+    "ref": "C57",
+    "valor": "47pF",
+    "x": 40.8,
+    "y": 20.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "R77",
+    "valor": "33",
+    "x": 62.76,
+    "y": 84.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C27",
+    "valor": "100nF",
+    "x": 107.83,
+    "y": 19.85,
+    "lado": "topo"
+   },
+   {
+    "ref": "F2",
+    "valor": "0,1 A",
+    "x": 143.86,
+    "y": 18.42,
+    "lado": "topo"
+   },
+   {
+    "ref": "R20",
+    "valor": "10k",
+    "x": 40.48,
+    "y": 33.78,
+    "lado": "topo"
+   },
+   {
+    "ref": "U14",
+    "valor": "Si2183-B60",
+    "x": 57.5,
+    "y": 71.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R112",
+    "valor": "1k",
+    "x": 125.98,
+    "y": 70.44,
+    "lado": "topo"
+   },
+   {
+    "ref": "C44",
+    "valor": "10uF",
+    "x": 35.3,
+    "y": 26.34,
+    "lado": "topo"
+   },
+   {
+    "ref": "C121",
+    "valor": "1uF",
+    "x": 65.5,
+    "y": 17.27,
+    "lado": "topo"
+   },
+   {
+    "ref": "R107",
+    "valor": "10k",
+    "x": 119.03,
+    "y": 60.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "C17",
+    "valor": "22uF",
+    "x": 104.5,
+    "y": 13.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "R68",
+    "valor": "0",
+    "x": 39.92,
+    "y": 82.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB7",
+    "valor": "600R",
+    "x": 48.95,
+    "y": 70.94,
+    "lado": "topo"
+   },
+   {
+    "ref": "D2",
+    "valor": "BZT52C10",
+    "x": 133.5,
+    "y": 11.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R80",
+    "valor": "33",
+    "x": 64.26,
+    "y": 88.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB3",
+    "valor": "1k@100MHz",
+    "x": 30.05,
+    "y": 21.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "L4",
+    "valor": "6.2nH",
+    "x": 37.48,
+    "y": 85.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "J8",
+    "valor": "ENTRADAS",
+    "x": 151.97,
+    "y": 37.47,
+    "lado": "topo"
+   },
+   {
+    "ref": "R63",
+    "valor": "NM",
+    "x": 46.5,
+    "y": 81.49,
+    "lado": "topo"
+   },
+   {
+    "ref": "C13",
+    "valor": "1uF",
+    "x": 112.11,
+    "y": 4.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "K1",
+    "valor": "G5V-1 5V",
+    "x": 133.0,
+    "y": 45.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "U15",
+    "valor": "GS2961AIBE3",
+    "x": 48.5,
+    "y": 89.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R1",
+    "valor": "100k",
+    "x": 133.07,
+    "y": 2.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "D8",
+    "valor": "1N4148W",
+    "x": 139.6,
+    "y": 22.23,
+    "lado": "topo"
+   },
+   {
+    "ref": "C138",
+    "valor": "12pF",
+    "x": 69.31,
+    "y": 87.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "C10",
+    "valor": "100nF",
+    "x": 82.0,
+    "y": 13.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "R111",
+    "valor": "10k",
+    "x": 116.53,
+    "y": 64.58,
+    "lado": "topo"
+   },
+   {
+    "ref": "C25",
+    "valor": "10uF",
+    "x": 87.25,
+    "y": 63.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "J7",
+    "valor": "USB-A",
+    "x": 12.91,
+    "y": 5.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "C117",
+    "valor": "100nF",
+    "x": 41.23,
+    "y": 15.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "R35",
+    "valor": "0",
+    "x": 41.3,
+    "y": 67.64,
+    "lado": "topo"
+   },
+   {
+    "ref": "C59",
+    "valor": "1nF C0G",
+    "x": 37.48,
+    "y": 65.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "C133",
+    "valor": "100nF",
+    "x": 83.17,
+    "y": 73.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "L1",
+    "valor": "6.8uH",
+    "x": 76.0,
+    "y": 6.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "D16",
+    "valor": "amarelo (ACT)",
+    "x": 157.4,
+    "y": 97.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "R22",
+    "valor": "1k",
+    "x": 24.73,
+    "y": 31.01,
+    "lado": "topo"
+   },
+   {
+    "ref": "C53",
+    "valor": "4.7uF",
+    "x": 27.07,
+    "y": 36.99,
+    "lado": "topo"
+   },
+   {
+    "ref": "R60",
+    "valor": "75 1%",
+    "x": 37.51,
+    "y": 87.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "C84",
+    "valor": "470nF",
+    "x": 40.75,
+    "y": 91.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C101",
+    "valor": "10nF",
+    "x": 56.5,
+    "y": 84.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "R53",
+    "valor": "33",
+    "x": 64.0,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "R52",
+    "valor": "33",
+    "x": 62.8,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "J4",
+    "valor": "RF IN 75 Ohm",
+    "x": 32.92,
+    "y": 67.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "C123",
+    "valor": "47uF",
+    "x": 21.34,
+    "y": 7.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB2",
+    "valor": "1k@100MHz",
+    "x": 34.8,
+    "y": 21.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "C139",
+    "valor": "100nF",
+    "x": 68.06,
+    "y": 88.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "D5",
+    "valor": "1N4148W",
+    "x": 144.6,
+    "y": 22.23,
+    "lado": "topo"
+   },
+   {
+    "ref": "C74",
+    "valor": "100nF",
+    "x": 52.29,
+    "y": 78.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "L2",
+    "valor": "4.7uH",
+    "x": 101.0,
+    "y": 6.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C107",
+    "valor": "10nF",
+    "x": 54.36,
+    "y": 97.67,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB6",
+    "valor": "600R",
+    "x": 37.41,
+    "y": 19.32,
+    "lado": "topo"
+   },
+   {
+    "ref": "C39",
+    "valor": "100nF",
+    "x": 24.48,
+    "y": 24.89,
+    "lado": "topo"
+   },
+   {
+    "ref": "R24",
+    "valor": "0",
+    "x": 27.05,
+    "y": 35.27,
+    "lado": "topo"
+   },
+   {
+    "ref": "C43",
+    "valor": "10uF",
+    "x": 31.2,
+    "y": 35.36,
+    "lado": "topo"
+   },
+   {
+    "ref": "J3",
+    "valor": "HDMI tipo A",
+    "x": 7.96,
+    "y": 28.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "R36",
+    "valor": "0",
+    "x": 48.7,
+    "y": 67.91,
+    "lado": "topo"
+   },
+   {
+    "ref": "U4",
+    "valor": "TLV62569DBV",
+    "x": 92.5,
+    "y": 93.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C11",
+    "valor": "10uF 50V",
+    "x": 109.34,
+    "y": 14.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "C81",
+    "valor": "1uF",
+    "x": 39.7,
+    "y": 85.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "C98",
+    "valor": "33uF",
+    "x": 62.66,
+    "y": 92.03,
+    "lado": "topo"
+   },
+   {
+    "ref": "C3",
+    "valor": "10uF 50V",
+    "x": 86.84,
+    "y": 14.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "C1",
+    "valor": "100uF 35V",
+    "x": 125.0,
+    "y": 7.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R44",
+    "valor": "0",
+    "x": 60.94,
+    "y": 65.49,
+    "lado": "topo"
+   },
+   {
+    "ref": "C97",
+    "valor": "10nF",
+    "x": 61.87,
+    "y": 97.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R31",
+    "valor": "0",
+    "x": 29.55,
+    "y": 36.41,
+    "lado": "topo"
+   },
+   {
+    "ref": "R32",
+    "valor": "22",
+    "x": 39.55,
+    "y": 19.16,
+    "lado": "topo"
+   },
+   {
+    "ref": "C91",
+    "valor": "10nF",
+    "x": 42.5,
+    "y": 79.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C47",
+    "valor": "4.7uF",
+    "x": 31.8,
+    "y": 20.21,
+    "lado": "topo"
+   },
+   {
+    "ref": "R39",
+    "valor": "0",
+    "x": 57.74,
+    "y": 66.06,
+    "lado": "topo"
+   },
+   {
+    "ref": "R64",
+    "valor": "NM",
+    "x": 47.75,
+    "y": 81.49,
+    "lado": "topo"
+   },
+   {
+    "ref": "J6",
+    "valor": "USB serviço",
+    "x": 53.7,
+    "y": 3.78,
+    "lado": "topo"
+   },
+   {
+    "ref": "C95",
+    "valor": "10nF",
+    "x": 61.87,
+    "y": 96.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "C89",
+    "valor": "1uF",
+    "x": 42.25,
+    "y": 81.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C33",
+    "valor": "100nF",
+    "x": 37.17,
+    "y": 45.48,
+    "lado": "topo"
+   },
+   {
+    "ref": "R88",
+    "valor": "10k",
+    "x": 49.44,
+    "y": 13.51,
+    "lado": "topo"
+   },
+   {
+    "ref": "SW2",
+    "valor": "GRAVAR (eMMC)",
+    "x": 110.5,
+    "y": 30.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C105",
+    "valor": "10nF",
+    "x": 55.61,
+    "y": 97.67,
+    "lado": "topo"
+   },
+   {
+    "ref": "R105",
+    "valor": "10k",
+    "x": 137.76,
+    "y": 37.74,
+    "lado": "topo"
+   },
+   {
+    "ref": "K3",
+    "valor": "G5V-1 5V",
+    "x": 133.0,
+    "y": 72.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "R29",
+    "valor": "0",
+    "x": 23.85,
+    "y": 28.98,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB4",
+    "valor": "1k@100MHz",
+    "x": 25.05,
+    "y": 21.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "R49",
+    "valor": "33",
+    "x": 59.2,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "R87",
+    "valor": "10k",
+    "x": 43.24,
+    "y": 14.44,
+    "lado": "topo"
+   },
+   {
+    "ref": "C52",
+    "valor": "470pF",
+    "x": 23.05,
+    "y": 34.51,
+    "lado": "topo"
+   },
+   {
+    "ref": "C29",
+    "valor": "100nF",
+    "x": 35.0,
+    "y": 43.44,
+    "lado": "topo"
+   },
+   {
+    "ref": "R73",
+    "valor": "33",
+    "x": 60.26,
+    "y": 85.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C41",
+    "valor": "100nF",
+    "x": 35.1,
+    "y": 28.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C109",
+    "valor": "100nF",
+    "x": 57.28,
+    "y": 13.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C37",
+    "valor": "100nF",
+    "x": 33.95,
+    "y": 23.88,
+    "lado": "topo"
+   },
+   {
+    "ref": "C145",
+    "valor": "100nF",
+    "x": 78.73,
+    "y": 85.81,
+    "lado": "topo"
+   },
+   {
+    "ref": "R34",
+    "valor": "0",
+    "x": 40.25,
+    "y": 65.24,
+    "lado": "topo"
+   },
+   {
+    "ref": "C71",
+    "valor": "10nF",
+    "x": 55.79,
+    "y": 62.73,
+    "lado": "topo"
+   },
+   {
+    "ref": "U9",
+    "valor": "TC358743XBG",
+    "x": 29.5,
+    "y": 28.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y3",
+    "valor": "27 MHz",
+    "x": 39.8,
+    "y": 97.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "R18",
+    "valor": "10k",
+    "x": 40.23,
+    "y": 45.98,
+    "lado": "topo"
+   },
+   {
+    "ref": "C66",
+    "valor": "100nF",
+    "x": 51.18,
+    "y": 70.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "R98",
+    "valor": "3.3k",
+    "x": 145.75,
+    "y": 36.01,
+    "lado": "topo"
+   },
+   {
+    "ref": "C30",
+    "valor": "100nF",
+    "x": 35.48,
+    "y": 53.08,
+    "lado": "topo"
+   },
+   {
+    "ref": "C73",
+    "valor": "100nF",
+    "x": 51.04,
+    "y": 66.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "U7",
+    "valor": "TPD4E05U06",
+    "x": 17.6,
+    "y": 33.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB1",
+    "valor": "120R 3A",
+    "x": 15.54,
+    "y": 20.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "U11",
+    "valor": "TLV73312",
+    "x": 38.0,
+    "y": 29.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C5",
+    "valor": "1uF",
+    "x": 87.11,
+    "y": 4.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "R8",
+    "valor": "100k 1%",
+    "x": 95.39,
+    "y": 93.06,
+    "lado": "topo"
+   },
+   {
+    "ref": "R81",
+    "valor": "1M",
+    "x": 42.74,
+    "y": 5.56,
+    "lado": "topo"
+   },
+   {
+    "ref": "R108",
+    "valor": "1k",
+    "x": 130.75,
+    "y": 74.98,
+    "lado": "topo"
+   },
+   {
+    "ref": "R92",
+    "valor": "2.2k",
+    "x": 71.24,
+    "y": 77.19,
+    "lado": "topo"
+   },
+   {
+    "ref": "C112",
+    "valor": "1uF",
+    "x": 45.48,
+    "y": 14.44,
+    "lado": "topo"
+   },
+   {
+    "ref": "C63",
+    "valor": "8.2pF",
+    "x": 44.55,
+    "y": 62.82,
+    "lado": "topo"
+   },
+   {
+    "ref": "C42",
+    "valor": "10uF",
+    "x": 33.05,
+    "y": 36.36,
+    "lado": "topo"
+   },
+   {
+    "ref": "R114",
+    "valor": "330",
+    "x": 152.39,
+    "y": 93.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "D11",
+    "valor": "amarelo",
+    "x": 126.51,
+    "y": 64.59,
+    "lado": "topo"
+   },
+   {
+    "ref": "F1",
+    "valor": "2 A",
+    "x": 141.0,
+    "y": 3.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "U16",
+    "valor": "TLV73312",
+    "x": 58.5,
+    "y": 97.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "FB5",
+    "valor": "1k@100MHz",
+    "x": 24.55,
+    "y": 36.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "TP1",
+    "valor": "XTAL_OUT",
+    "x": 39.5,
+    "y": 80.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "C4",
+    "valor": "100nF 50V",
+    "x": 82.11,
+    "y": 10.92,
+    "lado": "topo"
+   },
+   {
+    "ref": "R109",
+    "valor": "10k",
+    "x": 116.53,
+    "y": 62.31,
+    "lado": "topo"
+   },
+   {
+    "ref": "R37",
+    "valor": "4.7k",
+    "x": 43.69,
+    "y": 70.7,
+    "lado": "topo"
+   },
+   {
+    "ref": "R56",
+    "valor": "33",
+    "x": 56.8,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "R110",
+    "valor": "1k",
+    "x": 130.75,
+    "y": 88.38,
+    "lado": "topo"
+   },
+   {
+    "ref": "R21",
+    "valor": "0",
+    "x": 27.05,
+    "y": 33.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "J11",
+    "valor": "CONSOLE",
+    "x": 101.5,
+    "y": 21.48,
+    "lado": "topo"
+   },
+   {
+    "ref": "C103",
+    "valor": "10nF",
+    "x": 57.5,
+    "y": 87.95,
+    "lado": "topo"
+   },
+   {
+    "ref": "C46",
+    "valor": "470pF",
+    "x": 33.3,
+    "y": 19.76,
+    "lado": "topo"
+   },
+   {
+    "ref": "C2",
+    "valor": "10uF 50V",
+    "x": 128.5,
+    "y": 13.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "C54",
+    "valor": "100nF",
+    "x": 35.03,
+    "y": 34.34,
+    "lado": "topo"
+   },
+   {
+    "ref": "C36",
+    "valor": "100nF",
+    "x": 31.8,
+    "y": 23.73,
+    "lado": "topo"
+   },
+   {
+    "ref": "C93",
+    "valor": "10nF",
+    "x": 45.0,
+    "y": 79.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C88",
+    "valor": "16pF",
+    "x": 47.48,
+    "y": 97.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "R4",
+    "valor": "100k 1%",
+    "x": 89.41,
+    "y": 6.81,
+    "lado": "topo"
+   },
+   {
+    "ref": "C62",
+    "valor": "8.2pF",
+    "x": 46.73,
+    "y": 63.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "R27",
+    "valor": "0",
+    "x": 33.33,
+    "y": 33.63,
+    "lado": "topo"
+   },
+   {
+    "ref": "U6",
+    "valor": "TPD4E05U06",
+    "x": 17.6,
+    "y": 28.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "R117",
+    "valor": "1k",
+    "x": 155.9,
+    "y": 97.12,
+    "lado": "topo"
+   },
+   {
+    "ref": "C140",
+    "valor": "100nF",
+    "x": 69.31,
+    "y": 91.77,
+    "lado": "topo"
+   },
+   {
+    "ref": "U13",
+    "valor": "TLV73318",
+    "x": 50.5,
+    "y": 63.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C85",
+    "valor": "1uF",
+    "x": 44.0,
+    "y": 81.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "C72",
+    "valor": "100nF",
+    "x": 51.54,
+    "y": 76.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y2",
+    "valor": "24 MHz",
+    "x": 44.5,
+    "y": 73.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "R57",
+    "valor": "33",
+    "x": 55.6,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "C48",
+    "valor": "470pF",
+    "x": 28.55,
+    "y": 19.76,
+    "lado": "topo"
+   },
+   {
+    "ref": "R3",
+    "valor": "20k",
+    "x": 114.26,
+    "y": 13.45,
+    "lado": "topo"
+   },
+   {
+    "ref": "J9",
+    "valor": "RELÉS",
+    "x": 151.97,
+    "y": 86.9,
+    "lado": "topo"
+   },
+   {
+    "ref": "R48",
+    "valor": "33",
+    "x": 58.0,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "D15",
+    "valor": "verde (PWR)",
+    "x": 157.4,
+    "y": 93.4,
+    "lado": "topo"
+   },
+   {
+    "ref": "C78",
+    "valor": "4.7uF",
+    "x": 65.21,
+    "y": 71.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "U2",
+    "valor": "LMR33630ADDA",
+    "x": 86.0,
+    "y": 9.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R78",
+    "valor": "33",
+    "x": 62.76,
+    "y": 82.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "C124",
+    "valor": "47uF",
+    "x": 25.59,
+    "y": 3.55,
+    "lado": "topo"
+   },
+   {
+    "ref": "C144",
+    "valor": "100nF",
+    "x": 81.17,
+    "y": 93.25,
+    "lado": "topo"
+   },
+   {
+    "ref": "K4",
+    "valor": "G5V-1 5V",
+    "x": 133.0,
+    "y": 86.35,
+    "lado": "topo"
+   },
+   {
+    "ref": "R51",
+    "valor": "33",
+    "x": 61.6,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "U25",
+    "valor": "LTV-817S",
+    "x": 131.0,
+    "y": 25.5,
+    "lado": "topo"
+   },
+   {
+    "ref": "D1",
+    "valor": "SMBJ18A",
+    "x": 141.0,
+    "y": 9.0,
+    "lado": "topo"
+   },
+   {
+    "ref": "R7",
+    "valor": "43.2k 1%",
+    "x": 114.92,
+    "y": 5.05,
+    "lado": "topo"
+   },
+   {
+    "ref": "R42",
+    "valor": "0",
+    "x": 53.74,
+    "y": 64.81,
+    "lado": "topo"
+   },
+   {
+    "ref": "R16",
+    "valor": "10k",
+    "x": 40.51,
+    "y": 36.03,
+    "lado": "topo"
+   },
+   {
+    "ref": "C113",
+    "valor": "1uF",
+    "x": 46.23,
+    "y": 4.31,
+    "lado": "topo"
+   },
+   {
+    "ref": "D3",
+    "valor": "PESD0402-140",
+    "x": 37.48,
+    "y": 67.2,
+    "lado": "topo"
+   },
+   {
+    "ref": "Y7",
+    "valor": "32.768 kHz",
+    "x": 104.0,
+    "y": 82.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "R83",
+    "valor": "10k",
+    "x": 49.44,
+    "y": 8.99,
+    "lado": "topo"
+   },
+   {
+    "ref": "R85",
+    "valor": "10k",
+    "x": 49.44,
+    "y": 11.26,
+    "lado": "topo"
+   },
+   {
+    "ref": "R19",
+    "valor": "10k",
+    "x": 34.95,
+    "y": 35.52,
+    "lado": "topo"
+   },
+   {
+    "ref": "R104",
+    "valor": "3.3k",
+    "x": 140.75,
+    "y": 28.58,
+    "lado": "topo"
+   },
+   {
+    "ref": "J5",
+    "valor": "ASI IN 75 Ohm",
+    "x": 32.92,
+    "y": 86.3,
+    "lado": "topo"
+   },
+   {
+    "ref": "C150",
+    "valor": "100nF",
+    "x": 105.75,
+    "y": 76.75,
+    "lado": "topo"
+   },
+   {
+    "ref": "C6",
+    "valor": "100nF",
+    "x": 85.36,
+    "y": 4.07,
+    "lado": "topo"
+   },
+   {
+    "ref": "R50",
+    "valor": "33",
+    "x": 60.4,
+    "y": 78.6,
+    "lado": "topo"
+   },
+   {
+    "ref": "R28",
+    "valor": "0",
+    "x": 23.65,
+    "y": 26.88,
+    "lado": "topo"
+   }
+  ],
+  "glb_kb": 4000,
+  "stl_kb": 9084,
+  "step_kb": 22131
+ }
+}

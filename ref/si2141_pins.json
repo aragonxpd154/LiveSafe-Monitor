@@ -1,0 +1,39 @@
+{
+ "part": "Si2141-A10-GM",
+ "lcsc": "C430209",
+ "package": "QFN-24 3x3 mm, passo 0,40 mm; pinos 1, 7, 13 e 19 são pads de canto (e1 = 0,45 mm); pad exposto 1,70 mm = GND (pino 25)",
+ "fonte": "Skyworks Si2141 Data Short (09/08/2021), pág. 2 \"Pin Assignments\" e \"Package Information\"",
+ "alimentacao": {
+  "VDDH": "3,3 V",
+  "VDDL": "1,8 V externo, ou LDO interno a partir de VDDH"
+ },
+ "clock": "cristal de 24 MHz em XTAL_I/XTAL_O; XOUT repassa o clock ao demodulador",
+ "i2c": "0x60-0x63 (7 bits) conforme o nível do pino ADDR; base 0x60 (0xC0 em 8 bits)",
+ "pins": {
+  "1": "GPIO2",
+  "2": "SDA",
+  "3": "SCL",
+  "4": "AGC2",
+  "5": "AGC1",
+  "6": "GND",
+  "7": "VDDL",
+  "8": "GND",
+  "9": "VDDH",
+  "10": "LIF_N",
+  "11": "LIF_P",
+  "12": "XOUT",
+  "13": "XTAL_I",
+  "14": "XTAL_O",
+  "15": "VDDH",
+  "16": "GND",
+  "17": "VDDH",
+  "18": "NC",
+  "19": "RF_REF",
+  "20": "RF_IP",
+  "21": "GND",
+  "22": "RF_IN",
+  "23": "ADDR",
+  "24": "GPIO1",
+  "25": "GND_PAD"
+ }
+}

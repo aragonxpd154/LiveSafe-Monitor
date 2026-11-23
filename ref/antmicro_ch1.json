@@ -1,0 +1,619 @@
+{
+ "C1": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1C-BIASDA)"
+  }
+ },
+ "C2": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1C-DAOUT)"
+  }
+ },
+ "C3": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1C-PCKIN)"
+  }
+ },
+ "C4": {
+  "value": "C_470p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "GND",
+   "1": "Net-(U1B-AVDD25)"
+  }
+ },
+ "C5": {
+  "value": "C_470p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "GND",
+   "1": "Net-(C5-Pad1)"
+  }
+ },
+ "C6": {
+  "value": "C_470p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "GND",
+   "1": "Net-(C10-Pad2)"
+  }
+ },
+ "C7": {
+  "value": "C_470p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "GND",
+   "1": "Net-(U1B-VDDC1)"
+  }
+ },
+ "C8": {
+  "value": "C_4u7_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1B-AVDD25)"
+  }
+ },
+ "C9": {
+  "value": "C_4u7_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(C5-Pad1)"
+  }
+ },
+ "C10": {
+  "value": "C_4u7_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(C10-Pad2)"
+  }
+ },
+ "C11": {
+  "value": "C_4u7_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1B-VDDC1)"
+  }
+ },
+ "C12": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "GND"
+  }
+ },
+ "C13": {
+  "value": "C_47p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "GND"
+  }
+ },
+ "C14": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "+3V3",
+   "2": "GND"
+  }
+ },
+ "C15": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(Y1-EN)"
+  }
+ },
+ "C16": {
+  "value": "C_47p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(Y1-EN)"
+  }
+ },
+ "C17": {
+  "value": "C_10u_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "GND"
+  }
+ },
+ "C18": {
+  "value": "C_10u_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "GND"
+  }
+ },
+ "C19": {
+  "value": "C_10u_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "CH1_2V5",
+   "1": "GND"
+  }
+ },
+ "C20": {
+  "value": "C_10u_0603",
+  "footprint": "antmicro-footprints:C_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "CH1_1V2",
+   "1": "GND"
+  }
+ },
+ "C21": {
+  "value": "C_47p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(Y1-OUT)"
+  }
+ },
+ "C22": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+5V",
+   "1": "GND"
+  }
+ },
+ "C23": {
+  "value": "C_47p_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "/Channel 1/CH1_REFCLK",
+   "1": "GND"
+  }
+ },
+ "C27": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(C27-Pad2)"
+  }
+ },
+ "C28": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1B-VDDIO1)"
+  }
+ },
+ "C29": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(U1B-VDDIO2)"
+  }
+ },
+ "C30": {
+  "value": "C_100n_0402",
+  "footprint": "antmicro-footprints:C_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "/Channel 1/CH1_AVDD33",
+   "1": "GND"
+  }
+ },
+ "FB1": {
+  "value": "FB_120Z_3A_Murata-BLM18SG_0603",
+  "footprint": "antmicro-footprints:FB_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "GND",
+   "2": "Net-(FB1-Pad2)"
+  }
+ },
+ "FB2": {
+  "value": "FB_1kZ_0.8A_WE-CBF_0805",
+  "footprint": "antmicro-footprints:FB_0805_2012Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "CH1_2V5",
+   "1": "Net-(U1B-AVDD25)"
+  }
+ },
+ "FB3": {
+  "value": "FB_1kZ_0.8A_WE-CBF_0805",
+  "footprint": "antmicro-footprints:FB_0805_2012Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "CH1_1V2",
+   "1": "Net-(C5-Pad1)"
+  }
+ },
+ "FB4": {
+  "value": "FB_1kZ_0.8A_WE-CBF_0805",
+  "footprint": "antmicro-footprints:FB_0805_2012Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "CH1_1V2",
+   "1": "Net-(C10-Pad2)"
+  }
+ },
+ "FB5": {
+  "value": "FB_1kZ_0.8A_WE-CBF_0805",
+  "footprint": "antmicro-footprints:FB_0805_2012Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "CH1_1V2",
+   "1": "Net-(U1B-VDDC1)"
+  }
+ },
+ "FB6": {
+  "value": "FB_600Z_0.5A_Murata-BLM18AG_0603",
+  "footprint": "antmicro-footprints:FB_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "+3V3",
+   "2": "Net-(Y1-EN)"
+  }
+ },
+ "IC1": {
+  "value": "TLV73325PDBVT",
+  "footprint": "antmicro-footprints:SOT-23-5",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "+3V3",
+   "3": "+3V3",
+   "5": "CH1_2V5",
+   "2": "GND",
+   "4": "unconnected-(IC1-NC-Pad4)"
+  }
+ },
+ "IC2": {
+  "value": "TLV73312PDBVT",
+  "footprint": "antmicro-footprints:SOT-23-5",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "+3V3",
+   "3": "+3V3",
+   "5": "CH1_1V2",
+   "2": "GND",
+   "4": "unconnected-(IC2-NC-Pad4)"
+  }
+ },
+ "J2": {
+  "value": "HDMI-A_Molex_471511001",
+  "footprint": "antmicro-footprints:HDMI-A_Receptacle_Molex_471511001",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "14": "/Channel 1/DUMMY1",
+   "13": "/Channel 1/HDMI1_CEC",
+   "12": "/Channel 1/HDMI1_CLK_N",
+   "10": "/Channel 1/HDMI1_CLK_P",
+   "9": "/Channel 1/HDMI1_D0_N",
+   "7": "/Channel 1/HDMI1_D0_P",
+   "6": "/Channel 1/HDMI1_D1_N",
+   "4": "/Channel 1/HDMI1_D1_P",
+   "3": "/Channel 1/HDMI1_D2_N",
+   "1": "/Channel 1/HDMI1_D2_P",
+   "15": "/Channel 1/HDMI1_DDC_SCL",
+   "16": "/Channel 1/HDMI1_DDC_SDA",
+   "19": "/Channel 1/HDMI1_HPD",
+   "18": "/Channel 1/HDMI1_POWER",
+   "11": "GND",
+   "17": "GND",
+   "2": "GND",
+   "5": "GND",
+   "8": "GND",
+   "SH": "Net-(FB1-Pad2)"
+  }
+ },
+ "R1": {
+  "value": "R_0R_0603",
+  "footprint": "antmicro-footprints:R_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "/Channel 1/HDMI1_HPD",
+   "1": "/Channel 1/HDMI1_POWER"
+  }
+ },
+ "R2": {
+  "value": "R_0R_0603",
+  "footprint": "antmicro-footprints:R_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "/Channel 1/HDMI1_HPDI",
+   "1": "/Channel 1/HDMI1_POWER"
+  }
+ },
+ "R3": {
+  "value": "R_10k_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "/Channel 1/CH1_~{RST}"
+  }
+ },
+ "R4": {
+  "value": "R_2k_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "/Channel 1/CH1_AVDD33",
+   "1": "Net-(U1B-REXT)"
+  }
+ },
+ "R5": {
+  "value": "R_0R_0603",
+  "footprint": "antmicro-footprints:R_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "Net-(C27-Pad2)",
+   "2": "Net-(U1B-VDDC1)"
+  }
+ },
+ "R6": {
+  "value": "R_0R_0603",
+  "footprint": "antmicro-footprints:R_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "Net-(U1B-VDDIO1)"
+  }
+ },
+ "R7": {
+  "value": "R_0R_0603",
+  "footprint": "antmicro-footprints:R_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "Net-(U1B-VDDIO2)"
+  }
+ },
+ "R8": {
+  "value": "R_0R_0603",
+  "footprint": "antmicro-footprints:R_0603_1608Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "/Channel 1/CH1_AVDD33"
+  }
+ },
+ "R9": {
+  "value": "R_10k_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "/Channel 1/HDMI1_DDC_SDA_3V3"
+  }
+ },
+ "R10": {
+  "value": "R_10k_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+3V3",
+   "1": "/Channel 1/HDMI1_DDC_SCL_3V3"
+  }
+ },
+ "R11": {
+  "value": "R_10k_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+5V",
+   "1": "/Channel 1/HDMI1_DDC_SCL"
+  }
+ },
+ "R12": {
+  "value": "R_10k_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "+5V",
+   "1": "/Channel 1/HDMI1_DDC_SDA"
+  }
+ },
+ "R13": {
+  "value": "R_22R_0402",
+  "footprint": "antmicro-footprints:R_0402_1005Metric",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "/Channel 1/CH1_REFCLK",
+   "1": "Net-(Y1-OUT)"
+  }
+ },
+ "TP1": {
+  "value": "TP_0.75mm_SMD",
+  "footprint": "antmicro-footprints:TP_SMD_0.75mm",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "Net-(U1A-EDID_SDA)"
+  }
+ },
+ "TP2": {
+  "value": "TP_0.75mm_SMD",
+  "footprint": "antmicro-footprints:TP_SMD_0.75mm",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "Net-(U1A-EDID_SCL)"
+  }
+ },
+ "TP3": {
+  "value": "TP_0.75mm_SMD",
+  "footprint": "antmicro-footprints:TP_SMD_0.75mm",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "/Channel 1/HDMI1_HPDO"
+  }
+ },
+ "TP4": {
+  "value": "TP_0.75mm_SMD",
+  "footprint": "antmicro-footprints:TP_SMD_0.75mm",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "Net-(U3-EN)"
+  }
+ },
+ "U1": {
+  "value": "TC358743XBG",
+  "footprint": "antmicro-footprints:BGA-64_8x8_6.0x6.0mm",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "B1": "/Channel 1/CH1_AVDD33",
+   "F3": "/Channel 1/CH1_AVDD33",
+   "H5": "/Channel 1/CH1_REFCLK",
+   "G5": "/Channel 1/CH1_~{RST}",
+   "G1": "/Channel 1/HDMI1_CEC",
+   "C2": "/Channel 1/HDMI1_CLK_N",
+   "C1": "/Channel 1/HDMI1_CLK_P",
+   "D2": "/Channel 1/HDMI1_D0_N",
+   "D1": "/Channel 1/HDMI1_D0_P",
+   "E2": "/Channel 1/HDMI1_D1_N",
+   "E1": "/Channel 1/HDMI1_D1_P",
+   "F2": "/Channel 1/HDMI1_D2_N",
+   "F1": "/Channel 1/HDMI1_D2_P",
+   "H3": "/Channel 1/HDMI1_DDC_SCL_3V3",
+   "G3": "/Channel 1/HDMI1_DDC_SDA_3V3",
+   "H2": "/Channel 1/HDMI1_HPDI",
+   "H1": "/Channel 1/HDMI1_HPDO",
+   "C7": "CSI1_CLK_N",
+   "C8": "CSI1_CLK_P",
+   "E7": "CSI1_D1_N",
+   "E8": "CSI1_D1_P",
+   "D7": "CSI1_D2_N",
+   "D8": "CSI1_D2_P",
+   "B7": "CSI1_D3_N",
+   "B8": "CSI1_D3_P",
+   "A7": "CSI1_D4_N",
+   "A8": "CSI1_D4_P",
+   "A2": "GND",
+   "A3": "GND",
+   "C4": "GND",
+   "C5": "GND",
+   "D4": "GND",
+   "D5": "GND",
+   "D6": "GND",
+   "E3": "GND",
+   "E4": "GND",
+   "E5": "GND",
+   "E6": "GND",
+   "H8": "GND",
+   "H4": "I2C1_SCL",
+   "G4": "I2C1_SDA",
+   "B2": "Net-(C5-Pad1)",
+   "D3": "Net-(C5-Pad1)",
+   "C6": "Net-(C10-Pad2)",
+   "F6": "Net-(C10-Pad2)",
+   "C3": "Net-(C27-Pad2)",
+   "F5": "Net-(C27-Pad2)",
+   "H6": "Net-(U1A-EDID_SCL)",
+   "G6": "Net-(U1A-EDID_SDA)",
+   "B5": "Net-(U1B-AVDD25)",
+   "A1": "Net-(U1B-REXT)",
+   "G2": "Net-(U1B-VDDC1)",
+   "F4": "Net-(U1B-VDDIO1)",
+   "H7": "Net-(U1B-VDDIO2)",
+   "A4": "Net-(U1C-BIASDA)",
+   "A5": "Net-(U1C-DAOUT)",
+   "B6": "Net-(U1C-PCKIN)",
+   "B4": "unconnected-(U1A-IR-PadB4)",
+   "B3": "unconnected-(U1B-INT-PadB3)",
+   "G8": "unconnected-(U1C-A_OSCK-PadG8)",
+   "F7": "unconnected-(U1C-A_SCK-PadF7)",
+   "F8": "unconnected-(U1C-A_SD-PadF8)",
+   "G7": "unconnected-(U1C-A_WFS-PadG7)",
+   "A6": "unconnected-(U1C-PFIL-PadA6)"
+  }
+ },
+ "U2": {
+  "value": "TPD8S009DSMR",
+  "footprint": "antmicro-footprints:R-PDSO-N15",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "13": "+3V3",
+   "15": "+3V3",
+   "12": "/Channel 1/HDMI1_CLK_N",
+   "10": "/Channel 1/HDMI1_CLK_P",
+   "9": "/Channel 1/HDMI1_D0_N",
+   "7": "/Channel 1/HDMI1_D0_P",
+   "6": "/Channel 1/HDMI1_D1_N",
+   "4": "/Channel 1/HDMI1_D1_P",
+   "3": "/Channel 1/HDMI1_D2_N",
+   "1": "/Channel 1/HDMI1_D2_P",
+   "11": "GND",
+   "2": "GND",
+   "5": "GND",
+   "8": "GND",
+   "14": "unconnected-(U2-NC-Pad14)"
+  }
+ },
+ "U3": {
+  "value": "PCA9517ATP",
+  "footprint": "antmicro-footprints:SOT1069-2",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "1": "+3V3",
+   "8": "+5V",
+   "7": "/Channel 1/HDMI1_DDC_SCL",
+   "2": "/Channel 1/HDMI1_DDC_SCL_3V3",
+   "6": "/Channel 1/HDMI1_DDC_SDA",
+   "3": "/Channel 1/HDMI1_DDC_SDA_3V3",
+   "4": "GND",
+   "9": "GND",
+   "5": "Net-(U3-EN)"
+  }
+ },
+ "Y1": {
+  "value": "Oscillator_27MHz_TXC_7C",
+  "footprint": "antmicro-footprints:Oscillator_SMD_TXC_7C_5x3.2x1.2mm",
+  "sheet": "/Channel 1/",
+  "pins": {
+   "2": "GND",
+   "1": "Net-(Y1-EN)",
+   "4": "Net-(Y1-EN)",
+   "3": "Net-(Y1-OUT)"
+  }
+ }
+}
